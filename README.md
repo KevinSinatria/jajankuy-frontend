@@ -14,9 +14,8 @@ Aplikasi pemesanan jajanan digital untuk siswa sekolah.
 4. `npm run dev`
 
 ## Commit Message Rules:
-
-Gunakan format: <type>: <deskripsi>
--Deskripsi menggunakan bahasa Indonesia (bebas formal/informal)
--Jangan langsung push ke main! Buat branch dulu dan PR.
--Selalu pull dulu sebelum mulai kerja.
--Tulis commit sejelas mungkin. Hindari commit seperti “update” atau “fix bug doang”.
+- Gunakan format: <type>: <deskripsi>
+- Deskripsi menggunakan bahasa Indonesia (bebas formal/informal)
+- Jangan langsung push ke main! Buat branch dulu dan PR.
+- Selalu pull dulu sebelum mulai kerja.
+- Tulis commit sejelas mungkin. Hindari commit seperti “update” atau “fix bug doang”.
