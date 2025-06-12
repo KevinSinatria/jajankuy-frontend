@@ -13,7 +13,10 @@ Aplikasi pemesanan jajanan digital untuk siswa sekolah.
 3. `npm install`
 4. `npm run dev`
 
-## Rules
-- Gunakan branch `feature/nama-fitur`
-- Commit message: [Fitur] Tambah form login
-- Pull request sebelum merge
+## Commit Message Rules:
+
+Gunakan format: <type>: <deskripsi>
+-Deskripsi menggunakan bahasa Indonesia (bebas formal/informal)
+-Jangan langsung push ke main! Buat branch dulu dan PR.
+-Selalu pull dulu sebelum mulai kerja.
+-Tulis commit sejelas mungkin. Hindari commit seperti “update” atau “fix bug doang”.
