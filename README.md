@@ -21,8 +21,8 @@ Aplikasi pemesanan jajanan digital untuk siswa sekolah.
 - Tulis commit sejelas mungkin. Hindari commit seperti “update” atau “fix bug doang”.
 
 ## Contoh Penggunaan Message yang Benar:
-feat: tambah fitur pencarian produk
-fix: perbaiki error saat register tanpa email
-docs: perbarui cara menjalankan project di README
-refactor(cart): pisah fungsi hitungTotal ke util
-style: rapikan indentasi halaman checkout
+- feat: tambah fitur pencarian produk
+- fix: perbaiki error saat register tanpa email
+- docs: perbarui cara menjalankan project di README
+- refactor(cart): pisah fungsi hitungTotal ke util
+- style: rapikan indentasi halaman checkout
