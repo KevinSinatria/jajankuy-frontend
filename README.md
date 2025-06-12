@@ -1,12 +1,28 @@
-# React + Vite
+# Jajankuy 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi pemesanan jajanan digital untuk siswa sekolah.
 
-Currently, two official plugins are available:
+## Stack
+- Frontend: React + Tailwind CSS
+- Backend: Laravel 11 API
+- Database: PostgreSQL (Neon)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Cara Clone Repo
+1. Fork repo ini
+2. Clone: `git clone https://github.com/KevinSinatria/jajankuy-frontend.git`
+3. `npm install`
+4. `npm run dev`
 
-## Expanding the ESLint configuration
+## Commit Message Rules:
+- Gunakan format: [type]: [deskripsi]
+- Deskripsi menggunakan bahasa Indonesia (bebas formal/informal)
+- Jangan langsung push ke main! Buat branch dulu dan PR.
+- Selalu pull dulu sebelum mulai kerja.
+- Tulis commit sejelas mungkin. Hindari commit seperti “update” atau “fix bug doang”.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Contoh Penggunaan Message yang Benar:
+- feat: tambah fitur pencarian produk
+- fix: perbaiki error saat register tanpa email
+- docs: perbarui cara menjalankan project di README
+- refactor(cart): pisah fungsi hitungTotal ke util
+- style: rapikan indentasi halaman checkout
