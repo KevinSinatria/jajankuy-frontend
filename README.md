@@ -3,7 +3,13 @@
 Aplikasi pemesanan jajanan digital untuk siswa sekolah.
 
 ## Stack
-- Frontend: React + Tailwind CSS
+- Frontend:
++ React
++ TailwindCSS
++ React Router
++ React Spinner
++ Sweet Alert 2
+
 - Backend: Laravel 11 API
 - Database: PostgreSQL (Neon)
 
