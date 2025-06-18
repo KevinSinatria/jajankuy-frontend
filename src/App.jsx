@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes } from "react-router";
+import { Routes, Route } from "react-router";
 
 function App() {
   return (
