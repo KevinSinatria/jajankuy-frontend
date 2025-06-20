@@ -1,15 +1,35 @@
-import { useContext } from "react"
-import AuthContext from "../contexts/AuthContext"
-import Logout from "../components/Logout"
+import { useContext } from "react";
+import AuthContext from "../contexts/AuthContext";
+import Logout from "../components/Logout";
+import { useNavigate } from "react-router";
 
-export default function Home(){
+export default function Home() {
+  const { user } = useContext(AuthContext);
+  const Navigate = useNavigate();
+  
+  function handleLoginButton(){
+    Navigate("/login")
+  }
 
-    const {user} = useContext(AuthContext)
-
-    return (
-        <>  
-            <h1>Home kan initeh {user ? `selamat datang ${user.nama}` : "Kamu belum login"}</h1>
-            <button >{user ? <Logout/> : ''}</button>
-        </>
-    )
+  return (
+    <>
+      {user ? 
+        <div>
+            Selamat Datang {user.nama}
+            <button>
+                <Logout/>
+            </button>
+        </div>
+       : (
+        <div>
+          Selamat datang di jajankuy   
+          <button className="ml-2" onClick={handleLoginButton}>
+            Login
+          </button>
+          
+          
+        </div>
+      )}
+    </>
+  );
 }
