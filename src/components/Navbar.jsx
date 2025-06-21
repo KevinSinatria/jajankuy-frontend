@@ -51,7 +51,8 @@ const Navbar = () => {
       }`}
     >
       <div className="w-full lg:grid lg:grid-cols-3 lg:items-center">
-        {/* logo jajankuy */}
+
+        {/* Logo jajankuy */}
         <Link to="/" className="flex items-center whitespace-nowrap font-black" onClick={closeNavbar}>
           <span className="mr-2 w-28">
             <img src={logo} alt="JajanKuy Logo" style={{ width: '90px' }} />
