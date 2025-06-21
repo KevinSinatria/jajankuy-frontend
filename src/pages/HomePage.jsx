@@ -7,6 +7,8 @@ import minumanImg from "../assets/minuman.png";
 import camilanImg from "../assets/camilan.png";
 import alatTulisImg from "../assets/alat-tulis.png";
 import lainnyaImg from "../assets/lainnya.png";
+import leMineral from "../assets/minuman(DataDummy).png"
+import Card from "../components/Card";
 
 export default function HomePage() {
   const kategori = [
@@ -17,6 +19,17 @@ export default function HomePage() {
     { name: "Lainnya", img: lainnyaImg, width: 900, height: 50 },
   ];
 
+  const produk = [
+    {namaProduk : "Le mineral", img: leMineral, harga:3000 , deks:"minum ini di jamin ngga bakal kehausan soalnya minuman", stok:4, beranda:true },
+    {namaProduk : "Le mineral", img: leMineral, harga:3000 , deks:"minum ini di jamin ngga bakal kehausan soalnya minuman", stok:4, beranda:true},
+    {namaProduk : "Le mineral", img: leMineral, harga:3000 , deks:"minum ini di jamin ngga bakal kehausan soalnya minuman", stok:4, beranda:true},
+    {namaProduk : "Le mineral", img: leMineral, harga:3000 , deks:"minum ini di jamin ngga bakal kehausan soalnya minuman", stok:4, beranda:true},
+    {namaProduk : "Le mineral", img: leMineral, harga:3000 , deks:"minum ini di jamin ngga bakal kehausan soalnya minuman", stok:4, beranda:true},
+    {namaProduk : "Le mineral", img: leMineral, harga:3000 , deks:"minum ini di jamin ngga bakal kehausan soalnya minuman", stok:4, beranda:false},
+    {namaProduk : "Le mineral", img: leMineral, harga:3000 , deks:"minum ini di jamin ngga bakal kehausan soalnya minuman", stok:4, beranda:true}
+  ]
+
+  const produkBeranda = produk.filter((p) => (p.beranda == true))
   return (
     <div>
       <main className="w-full min-h-screen flex flex-col bg-gradient-to-br from-green-50 to-white text-neutral-600">
@@ -56,9 +69,16 @@ export default function HomePage() {
             ))}
           </div>
         </section>
-
-        <Footer />
+          <div className="grid grid-cols-5 gap-4">
+            {
+              
+              produkBeranda.map((p,i) => (
+                  <Card namaProduk={p.namaProduk} img={p.img} harga={p.harga} deks={p.deks} stok={p.stok} />
+                ))
+              }
+              </div>
       </main>
+        <Footer />
     </div>
   );
 }
