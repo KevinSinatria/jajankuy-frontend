@@ -9,7 +9,7 @@ export default function LoginPage() {
         <div className="absolute shadow-[11px_-3px_6px_0px_rgba(0,_0,_0,_0.1)] top-0 left-0 h-full w-full bg-[#B4DC62] transform -skew-x-12 origin-top-left z-0" />
 
         <div className="absolute inset-0 flex items-center justify-center z-10">
-          <img src={Logo} alt="Login Illustration" className="w-3/4 max-w-md" />
+          <img src={Logo} alt="Login Illustration" className="w-3/4 max-w-lg" />
         </div>
       </div>
 

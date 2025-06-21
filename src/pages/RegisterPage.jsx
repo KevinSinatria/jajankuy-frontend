@@ -13,7 +13,7 @@ export default function RegisterPage() {
 
         {/* Logo di tengah */}
         <div className="relative z-10 flex items-center justify-center h-full w-full ml-40">
-          <img src={Logo} alt="Login Illustration" className="w-3/4 max-w-md drop-shadow-lg" />
+          <img src={Logo} alt="Login Illustration" className="w-3/4 max-w-lg drop-shadow-lg" />
         </div>
       </div>
 
