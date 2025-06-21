@@ -5,7 +5,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen w-full bg-white flex flex-col md:flex-row overflow-hidden">
 
-      {/* Mobile: Logo di atas */}
+      
       <div className="md:hidden flex justify-center py-8">
         <img
           src={Logo}
@@ -14,18 +14,18 @@ export default function LoginPage() {
         />
       </div>
 
-      {/* Desktop: Background hijau + Logo */}
+      
       <div className="hidden md:flex relative w-1/2 items-center justify-center overflow-hidden">
-        {/* Background hijau miring */}
+      
         <div className="absolute inset-0 bg-[#B4DC62] transform -skew-x-12 origin-top-left shadow-xl z-0" />
         
-        {/* Logo */}
+      
         <div className="relative z-10 flex items-center justify-center w-full h-full">
           <img src={Logo} alt="Login Illustration" className="w-3/4 max-w-lg drop-shadow-lg object-contain" />
         </div>
       </div>
 
-      {/* Form Login */}
+      
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-4 py-6 md:py-0 z-10">
         <LoginForm />
       </div>
