@@ -3,7 +3,7 @@ import AuthContext from "../contexts/AuthContext";
 import Logout from "../components/Logout";
 import { useNavigate } from "react-router";
 
-export default function Home() {
+export default function HomePage() {
   const { user } = useContext(AuthContext);
   const Navigate = useNavigate();
   
