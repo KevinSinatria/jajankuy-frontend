@@ -1,35 +1,13 @@
-import { useContext } from "react";
-import AuthContext from "../contexts/AuthContext";
-import Logout from "../components/Logout";
-import { useNavigate } from "react-router";
+import React from 'react'
+import Navbar from '../components/Navbar'
 
 export default function HomePage() {
-  const { user } = useContext(AuthContext);
-  const Navigate = useNavigate();
-  
-  function handleLoginButton(){
-    Navigate("/login")
-  }
 
   return (
-    <>
-      {user ? 
-        <div>
-            Selamat Datang {user.nama}
-            <button>
-                <Logout/>
-            </button>
-        </div>
-       : (
-        <div>
-          Selamat datang di jajankuy   
-          <button className="ml-2" onClick={handleLoginButton}>
-            Login
-          </button>
-          
-          
-        </div>
-      )}
-    </>
+    <div>
+      <main className='w-full min-h-screen flex flex-col bg-neutral-50 text-neutral-600'>
+        <Navbar />
+      </main>
+    </div>
   );
 }
