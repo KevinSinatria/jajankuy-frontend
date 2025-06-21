@@ -51,14 +51,14 @@ const Navbar = () => {
       }`}
     >
       <div className="w-full lg:grid lg:grid-cols-3 lg:items-center">
-        {/* logo jajankuy */}
+        {/* Logo jajankuy */}
         <Link to="/" className="flex items-center whitespace-nowrap font-black" onClick={closeNavbar}>
           <span className="mr-2 w-28">
             <img src={logo} alt="JajanKuy Logo" style={{ width: '90px' }} />
           </span>
         </Link>
 
-        {/* searchbar */}
+        {/* Searchbar Tengah */}
         <div className="hidden lg:flex justify-center">
           <div className="relative w-80">
             <input
@@ -73,7 +73,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* logo burger */}
+        {/* Burger Menu */}
         <label
           className="hamburger absolute top-10 right-10 cursor-pointer lg:hidden"
           htmlFor="navbar-toggle"
@@ -95,7 +95,7 @@ const Navbar = () => {
           </svg>
         </label>
 
-        {/* navigasi */}
+        {/* Navigasi dan Login/Profile */}
         <nav
           aria-label="Header Navigation"
           className={`${
@@ -115,7 +115,7 @@ const Navbar = () => {
               </Link>
             </li>
 
-            {/* navigasi utama */}
+            {/* navigasi */}
             {navItems.map((item) => (
               <li key={item.id} className="lg:mr-12">
                 <Link
