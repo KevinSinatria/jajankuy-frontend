@@ -5,6 +5,7 @@ import Pagination from "../components/Pagination";
 import { CirclePlus, CircleMinus } from 'lucide-react';
 import productImage from '../assets/lemineral.png';
 import leMinerale from '../assets/minuman(DataDummy).png';
+import Footer from '../components/Footer';
 
 const produkSerupa = Array.from({ length: 17 }, () => ({
     namaProduk: "Le mineral",
@@ -107,6 +108,7 @@ const DetailsPage = () => {
                 totalPages={totalPages}
                 onPageChange={goToPage}
             />
+            <Footer />
         </div>
     );
 };
