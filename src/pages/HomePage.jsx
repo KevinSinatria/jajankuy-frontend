@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -9,8 +9,13 @@ import alatTulisImg from "../assets/alat-tulis.png";
 import lainnyaImg from "../assets/lainnya.png";
 import leMineral from "../assets/minuman(DataDummy).png";
 import Card from "../components/Card";
+import Pagination from "../components/Pagination";
+import { AuthProvider } from "../contexts/AuthContext";
 
 export default function HomePage() {
+
+  // const {user} = useContext(AuthProvider);
+
   const kategori = [
     { name: "Makanan", img: makananImg, width: 50, height: 50 },
     { name: "Minuman", img: minumanImg, width: 50, height: 50 },
@@ -19,69 +24,16 @@ export default function HomePage() {
     { name: "Lainnya", img: lainnyaImg, width: 50, height: 50 },
   ];
 
-  const produk = [
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-    { namaProduk: "Le mineral", img: leMineral, harga: 3000, deks: "Minum ini dijamin ngga bakal kehausan.", stok: 4, beranda: true },
-  ];
+  const produk = Array.from({ length: 200 }, (_, i) => ({
+    namaProduk: "Le mineral",
+    img: leMineral,
+    harga: 3000,
+    deks: "Minum ini dijamin ngga bakal kehausan.",
+    stok: 4,
+    beranda: true,
+  }));
 
-  // filter produk untuk yang ditampilkan di beranda
-  const produkBeranda = produk.filter((p) => p.beranda === true);
+  const produkBeranda = produk.filter((p) => p.beranda);
 
   // pagination logic
   const [currentPage, setCurrentPage] = useState(1);
@@ -134,7 +86,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* card produk */}
+        {/* produk */}
         <section className="w-full mx-auto px-4 mt-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 place-items-center">
             {currentProduk.map((p, i) => (
@@ -151,37 +103,11 @@ export default function HomePage() {
         </section>
 
         {/* pagination */}
-        <section className="flex justify-center mt-10 mb-8 space-x-2">
-          <button
-            onClick={() => goToPage(currentPage - 1)}
-            disabled={currentPage === 1}
-            className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
-          >
-            Prev
-          </button>
-
-          {[...Array(totalPages)].map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goToPage(i + 1)}
-              className={`px-3 py-1 rounded ${
-                currentPage === i + 1
-                  ? "bg-green-500 text-white"
-                  : "bg-gray-200 hover:bg-gray-300"
-              }`}
-            >
-              {i + 1}
-            </button>
-          ))}
-
-          <button
-            onClick={() => goToPage(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
-          >
-            Next
-          </button>
-        </section>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={goToPage}
+        />
       </main>
 
       <Footer />

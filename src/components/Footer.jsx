@@ -40,22 +40,22 @@ function Footer() {
             <h3 className="text-md font-bold mb-4">Site links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/" className="hover:underline">
                   Beranda
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/keranjang" className="hover:underline">
                   Keranjang
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/pesanan" className="hover:underline">
                   Pesanan
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/history" className="hover:underline">
                   History
                 </a>
               </li>
