@@ -1,19 +1,39 @@
 import React from "react";
-import lemineral from "../assets/minuman(DataDummy).png";
 
 const Card = (props) => {
   return (
     <div
-      className="h-[350px] w-[253px] rounded-2xl m-5 border shadow-[5px_0px_31px_2px_rgba(0,_0,_0,_0.1)] 
-                transition-all duration-300 ease-in-out transform 
-                hover:-translate-y-2 hover:shadow-[5px_0px_31px_8px_rgba(0,_0,_0,_0.1)] p-3">
-      <img src={lemineral} alt="Gambar Produk" className="mx-auto mt-5" />
-      <p className="font-bold text-xl">{props.namaProduk}</p>
-      <p className="font-bold text-md">Rp. {props.harga.toLocaleString("id-ID")}.00</p>
-      <p className="text-black">{props.deks}</p>
-      <div className="mt-4 flex justify-between">
-        <p>Stok : {props.stok} </p>
-        <button className="bg-[#6CBB66] w-[80px] h-[30px] text-white rounded-2xl font-bold">lihat</button>
+      className="h-[380px] w-[253px] rounded-2xl m-4 border shadow-md 
+                 p-4 flex flex-col justify-between bg-white transition-all duration-300 
+                 hover:shadow-lg"
+    >
+      {/* gambar produk */}
+      <div className="flex justify-center mt-2">
+        <img src={props.img} alt="Gambar Produk" className="h-28 object-contain" />
+      </div>
+
+      {/* nama produk */}
+      <div className="mt-3 flex justify-between items-center">
+        <p className="font-semibold text-black text-lg">{props.namaProduk}</p>
+        <p className="text-sm font-medium text-black">600 ml</p>
+      </div>
+
+      {/* harga produk */}
+      <p className="text-md font-semibold text-black -mt-6">
+        Rp. {props.harga.toLocaleString("id-ID")},00
+      </p>
+
+      {/* deskripsi */}
+      <p className="text-sm text-gray-700 -mt-4 line-clamp-3 leading-relaxed">
+        {props.deks}
+      </p>
+
+      {/* stok dan button */}
+      <div className="mt-4 flex justify-between items-center">
+        <p className="text-sm font-medium text-gray-800">Stok : {props.stok}</p>
+        <button className="bg-green-500 hover:bg-green-600 px-4 py-1 rounded-full text-white text-sm font-semibold shadow">
+          Lihat
+        </button>
       </div>
     </div>
   );
