@@ -1,10 +1,11 @@
 import RegisterForm from "../components/RegisterForm";
 import Logo from "../assets/Logo_2.png";
+import Navbar from "../components/Navbar";
 
 export default function RegisterPage() {
   return (
     <div className="min-h-screen w-full bg-white flex flex-col md:flex-row-reverse overflow-hidden">
-
+      <Navbar />
       
       <div className="md:hidden flex justify-center py-8">
         <img
