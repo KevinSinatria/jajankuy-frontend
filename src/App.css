@@ -1,5 +1,14 @@
 @import "tailwindcss";
-/* From Uiverse.io by talhabangyal */ 
+@import '@fontsource/poppins';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* From Uiverse.io by talhabangyal */
 .hamburger {
   cursor: pointer;
 }
@@ -31,11 +40,11 @@
   stroke-dasharray: 12 63;
 }
 
-.hamburger input:checked + svg {
+.hamburger input:checked+svg {
   transform: rotate(-45deg);
 }
 
-.hamburger input:checked + svg .line-top-bottom {
+.hamburger input:checked+svg .line-top-bottom {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }

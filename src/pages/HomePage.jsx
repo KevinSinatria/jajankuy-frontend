@@ -44,15 +44,11 @@ export default function HomePage() {
                   className="object-contain"
                 />
               </div>
-
               <span className="mt-2 font-medium">{cat.name}</span>
             </div>
           ))}
         </div>
       </section>
-
-
-
     </main>
   );
 }
