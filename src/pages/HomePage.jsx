@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -10,8 +10,12 @@ import lainnyaImg from "../assets/lainnya.png";
 import leMineral from "../assets/minuman(DataDummy).png";
 import Card from "../components/Card";
 import Pagination from "../components/Pagination";
+import { AuthProvider } from "../contexts/AuthContext";
 
 export default function HomePage() {
+
+  // const {user} = useContext(AuthProvider);
+
   const kategori = [
     { name: "Makanan", img: makananImg, width: 50, height: 50 },
     { name: "Minuman", img: minumanImg, width: 50, height: 50 },
