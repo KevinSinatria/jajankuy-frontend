@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -72,7 +71,7 @@ export default function HomePage() {
         </section>
           <div className="grid grid-cols-5 gap-4">
             {
-              
+
               produkBeranda.map((p,i) => (
                   <Card namaProduk={p.namaProduk} img={p.img} harga={p.harga} deks={p.deks} stok={p.stok} />
                 ))
