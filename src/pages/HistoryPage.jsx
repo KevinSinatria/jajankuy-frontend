@@ -21,7 +21,7 @@ function HistoryPage() {
           <span></span>
         </div>
 
-
+        
         {/* card */}
         <div className="flex justify-center items-center px-4 py-5 my-5">
           <div className="w-full max-w-4xl mx-5 bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-transform hover:scale-[1.01] duration-300 ease-in-out">

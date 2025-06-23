@@ -111,7 +111,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="hidden lg:flex lg:mr-6">
-              <Link to="/wishlist" className="flex items-center" onClick={closeNavbar}>
+              <Link to="/favorite" className="flex items-center" onClick={closeNavbar}>
                 <Heart className="text-gray-700" size={20} />
               </Link>
             </li>
