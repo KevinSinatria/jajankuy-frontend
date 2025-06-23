@@ -64,7 +64,7 @@ const Sidebar = () => {
                             animate={{
                                 top: `${activeIndex * (ITEM_HEIGHT + ITEM_GAP)}px`,
                             }}
-                            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                            transition={{ type: 'spring', stiffness: 400, damping: 35 }}
                             className="absolute w-[240px] h-[55px] bg-white text-black rounded-l-[32px] shadow-md z-0"
                         >
                             {/* lengkungan atas */}
