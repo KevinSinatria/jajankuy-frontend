@@ -13,6 +13,7 @@ import KelolaJajananPage from "./pages/admin/KelolaJajananPage";
 import KelolaUserPage from "./pages/admin/KelolaUserPage";
 import StatistikPage from "./pages/admin/StatistikPage";
 import PesananPage from "./pages/admin/PesananPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -26,11 +27,12 @@ function App() {
         <Route path="/keranjang" element={<KeranjangPage />} />
         <Route path="/adminlogin" element={<LoginAdminPage />} />
         <Route path="/dashboard" element={<DashboardAdminPage />} />
-        <Route path="/profile" element={<ProfileAdminPage />} />
+        <Route path="/profileAdmin" element={<ProfileAdminPage />} />
         <Route path="/kelola-jajanan" element={<KelolaJajananPage />} />
         <Route path="/kelola-user" element={<KelolaUserPage />} />
         <Route path="/statistik" element={<StatistikPage />} />
         <Route path="/pesanan" element={<PesananPage />} />
+        <Route path="/profile" element={<ProfilePage/>} />
       </Routes>
     </>
   );
