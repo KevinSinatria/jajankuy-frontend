@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import leMinerale from '../assets/lemineral.png';
 import { PlusCircle, MinusCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const FavoritePage = () => {
     const [favorites, setFavorites] = useState([
@@ -36,9 +37,8 @@ const FavoritePage = () => {
     return (
         <div className="bg-gradient-to-br from-white to-lime-50 min-h-screen">
             <Navbar />
-            <div className="px-6 pt-24 pb-10">
+            <div className="px-6 pt-24 pb-14">
                 <h1 className="text-3xl font-semibold text-center mt-14">Favorite</h1>
-
                 <div className="space-y-6 mt-14">
                     {favorites.map((item) => (
                         <div key={item.id} className="max-w-5xl mx-auto">
@@ -87,6 +87,7 @@ const FavoritePage = () => {
                     ))}
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
