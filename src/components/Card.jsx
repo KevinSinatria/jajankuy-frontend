@@ -32,7 +32,7 @@ const Card = (props) => {
       <div className="mt-4 flex justify-between items-center">
         <p className="text-sm font-medium text-gray-800">Stok : {props.stok}</p>
         <a href="/detail">
-          <button className="bg-green-500 hover:bg-green-600 px-4 py-1 rounded-full text-white text-sm font-semibold shadow">
+          <button className="bg-green-500 hover:bg-green-600 px-4 py-1 rounded-full text-white text-sm font-semibold cursor-pointer shadow">
             Lihat
           </button>
         </a>

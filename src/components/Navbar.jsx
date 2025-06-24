@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Search, ShoppingCart, Heart } from 'lucide-react';
-import logo from '../assets/jajankuylogo.png';
+import logo from '../assets/logo.png';
+import typ from '../assets/typography.png';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -40,22 +41,22 @@ const Navbar = () => {
 
   const navItems = [
     { id: 1, name: 'Beranda', path: '/' },
-    { id: 2, name: 'Pesanan', path: '/pesanan' },
+    { id: 2, name: 'Pesanan', path: '/checkout' },
     { id: 3, name: 'Riwayat', path: '/history' },
   ];
 
   return (
     <header
-      className={`fixed mx-auto w-full flex flex-col overflow-hidden px-8 py-4 z-50 backdrop-blur-md transition-all duration-300 ${
-        isScrolled ? 'bg-white/80 shadow-md' : 'bg-transparent'
-      }`}
-    >
+      className={`fixed top-0 lg:top-4 left-1/2 -translate-x-1/2 w-full max-w-7xl z-100 backdrop-blur-md transition-all duration-300 shadow-md lg:border lg:border-black lg:rounded-full px-6 py-3' : 'bg-transparent py-4'`}>
       <div className="w-full lg:grid lg:grid-cols-3 lg:items-center">
 
-        {/* Logo jajankuy */}
+        {/* logo */}
         <Link to="/" className="flex items-center whitespace-nowrap font-black" onClick={closeNavbar}>
-          <span className="mr-2 w-28">
-            <img src={logo} alt="JajanKuy Logo" style={{ width: '90px' }} />
+          <span className="ml-2 mt-2">
+            <img src={logo} alt="JajanKuy Logo" style={{ width: '40px' }} />
+          </span>
+          <span className="ml-2 mt-2">
+            <img src={typ} alt="JajanKuy Logo" style={{ width: '120px' }} />
           </span>
         </Link>
 
@@ -65,7 +66,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Cari..."
-              className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition duration-100"
+              className="w-full px-4 py-2 pr-10 border border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition duration-100"
             />
             <Search
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
@@ -76,7 +77,7 @@ const Navbar = () => {
 
         {/* logo burger */}
         <label
-          className="hamburger absolute top-10 right-10 cursor-pointer lg:hidden"
+          className="hamburger absolute top-4 right-10 cursor-pointer lg:hidden"
           htmlFor="navbar-toggle"
           aria-label="Toggle navigation"
         >
@@ -99,9 +100,8 @@ const Navbar = () => {
         {/* navigasi */}
         <nav
           aria-label="Header Navigation"
-          className={`${
-            open ? 'pt-8 max-h-96' : 'max-h-0'
-          } flex w-full flex-col items-center overflow-hidden transition-all duration-300 lg:col-start-3 lg:max-h-full lg:flex-row lg:justify-end`}
+          className={`${open ? 'pt-4 max-h-96' : 'max-h-0'
+            } flex w-full flex-col items-center overflow-hidden transition-all duration-300 lg:col-start-3 lg:max-h-full lg:flex-row lg:justify-end`}
         >
           <ul className="flex w-full flex-col items-center space-y-2 lg:flex-row lg:space-y-0 lg:justify-end">
             {/* keranjang dan wishlist layar desktop */}

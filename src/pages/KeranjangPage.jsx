@@ -48,7 +48,7 @@ const KeranjangPage = () => {
                         <div className="flex flex-col md:flex-row gap-8">
                             
                             {/* daftar produk */}
-                            <div className="flex-1 space-y-4">
+                            <div className="flex-1 space-y-4 mb-6">
                                 {keranjang.map((item) => (
                                     <div
                                         key={item.id}

@@ -22,11 +22,11 @@ const iconMap = {
 
 const navItems = [
     { id: 1, name: 'Dashboard', path: '/dashboard' },
-    { id: 2, name: 'Profile', path: '/profile' },
+    { id: 2, name: 'Profile', path: '/profile-admin' },
     { id: 3, name: 'Kelola Jajanan', path: '/kelola-jajanan' },
     { id: 4, name: 'Statistik', path: '/statistik' },
     { id: 5, name: 'Kelola User', path: '/kelola-user' },
-    { id: 6, name: 'Pesanan', path: '/pesanan' },
+    { id: 6, name: 'Pesanan', path: '/pesanan-admin' },
 ];
 
 const ITEM_HEIGHT = 56;

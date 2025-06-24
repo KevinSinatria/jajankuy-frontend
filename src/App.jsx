@@ -28,11 +28,12 @@ function App() {
         <Route path="/keranjang" element={<KeranjangPage />} />
         <Route path="/adminlogin" element={<LoginAdminPage />} />
         <Route path="/dashboard" element={<DashboardAdminPage />} />
-        <Route path="/profileAdmin" element={<ProfileAdminPage />} />
+        <Route path="/profile-admin" element={<ProfileAdminPage />} />
         <Route path="/kelola-jajanan" element={<KelolaJajananPage />} />
         <Route path="/kelola-user" element={<KelolaUserPage />} />
         <Route path="/statistik" element={<StatistikPage />} />
         <Route path="/pesanan" element={<PesananPage />} />
+        <Route path="/pesanan-admin" element={<PesananPage />} />
         <Route path="/profile" element={<ProfilePage/>} />
         <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
