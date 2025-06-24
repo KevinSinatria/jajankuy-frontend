@@ -9,7 +9,7 @@ function Footer() {
       <hr className="my-6 border-t border-gray-600" />
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-        {/* Kolom Logo & Deskripsi */}
+        {/* logo */}
         <div className="col-span-1 flex flex-col items-center lg:items-start">
           <div className="flex items-center mb-4">
             <img src={logo} alt="logo" className="w-8 h-12" />
@@ -21,7 +21,7 @@ function Footer() {
           </p>
         </div>
 
-        {/* Support */}
+        {/* support */}
         <div className="flex flex-col items-center">
           <h3 className="text-md font-bold mb-4">Support</h3>
           <ul className="space-y-2 text-sm">
@@ -30,7 +30,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Site Links */}
+        {/* site links */}
         <div className="flex flex-col items-center">
           <h3 className="text-md font-bold mb-4">Site links</h3>
           <ul className="space-y-2 text-sm">
@@ -41,7 +41,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Follow Us */}
+        {/* follow us */}
         <div className="flex flex-col items-center">
           <h3 className="text-md font-bold mb-4">Follow Us</h3>
           <div className="flex space-x-9">
@@ -51,10 +51,9 @@ function Footer() {
         </div>
       </div>
 
-      {/* Garis pembatas */}
       <hr className="my-6 border-t border-gray-600" />
 
-      {/* Copyright */}
+      {/* cpr */}
       <div className="text-center text-sm text-gray-300 pb-6">
         ©2025, JAJANKUY
       </div>
