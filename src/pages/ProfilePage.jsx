@@ -19,8 +19,7 @@ function ProfilePage() {
     setUser((u) => ({ ...u, email: e.target.value }));
   }
 
-  const hurufPertamaKapital =
-    user.username.charAt(0).toUpperCase() + user.username.slice(1);
+  const hurufPertamaKapital = user.username.charAt(0).toUpperCase();
   const [isEdit, setIsEdit] = useState(false);
   function handleEdit() {
     setIsEdit(!isEdit);
@@ -48,11 +47,7 @@ function ProfilePage() {
           </div>
 
           <div className="absolute left-8 w-32 h-32 rounded-full border-4 border-white overflow-hidden top-20 z-20 shadow-lg">
-            <img
-              src={FotoProfile}
-              alt="Profile"
-              className="w-full h-full object-cover"
-            />
+            <h1 className="text-6xl font-bold justify-center items-center flex m-auto bg-gray-400 w-full h-full">{hurufPertamaKapital}</h1>
           </div>
 
           {/* Info dan tombol Edit */}

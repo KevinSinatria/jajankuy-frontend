@@ -14,8 +14,8 @@ import KelolaUserPage from "./pages/admin/KelolaUserPage";
 import StatistikPage from "./pages/admin/StatistikPage";
 import PesananPage from "./pages/admin/PesananPage";
 import ProfilePage from "./pages/ProfilePage";
+import HistoryPage from "./pages/HistoryPage";
 import FavoritePage from "./pages/FavoritePage";
-
 function App() {
   return (
     <>
@@ -35,6 +35,7 @@ function App() {
         <Route path="/pesanan" element={<PesananPage />} />
         <Route path="/pesanan-admin" element={<PesananPage />} />
         <Route path="/profile" element={<ProfilePage/>} />
+        <Route path="/history" element={<HistoryPage/>} />
         <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
     </>
