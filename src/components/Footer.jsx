@@ -1,71 +1,62 @@
-import whatsapp from "../assets/whatsapp.png";
-import instagram from "../assets/instagram.png";
+import whatsapp from "../assets/wa.png";
+import instagram from "../assets/ig.png";
+import logo from "../assets/logo2.png";
+import typ from "../assets/typography2.png";
 
 function Footer() {
   return (
-    <footer className="bg-[#B4DC62] text-black">
-      {/* Konten Utama */}
-      <div className="max-w-screen-xl pl-20 pr-6 py-10 grid grid-cols-1 md:grid-cols-3">
-        <div>
-          <h2 className="text-xl font-bold uppercase mb-3">JAJANKUY</h2>
-          <p className="text-sm mb-5">
-            Gunung adalah suatu bentuk permukaan tanah yang letaknya jauh lebih
-            tinggi dari tanah-tanah di daerah sekitarnya
-          </p>
-          <div className="flex space-x-4">
-            <img src={whatsapp} alt="whatsapp" className="w-10 h-10" />
-            <img src={instagram} alt="instagram" className="w-10 h-10" />
+    <footer className="bg-[#2D3228] text-white pt-10 px-6 lg:px-20">
+      <hr className="my-6 border-t border-gray-600" />
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        {/* Kolom Logo & Deskripsi */}
+        <div className="col-span-1 flex flex-col items-center lg:items-start">
+          <div className="flex items-center mb-4">
+            <img src={logo} alt="logo" className="w-8 h-12" />
+            <img src={typ} alt="typography" className="w-28 ml-2" />
           </div>
+          <p className="text-sm font-semibold mb-1">"Biar Teman Masih Ngantri, Kamu Udah Nyemil!"</p>
+          <p className="text-sm text-gray-300">
+            Aplikasi pemesanan jajanan sekolah tanpa ribet. Cepat, praktis, tinggal klik.
+          </p>
         </div>
 
-        {/* Tengah */}
-        <div className="flex gap-10 ml-4">
-          <div>
-            <h3 className="text-md font-bold mb-4">Support</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="hover:underline">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Help
-                </a>
-              </li>
-            </ul>
-          </div>
-          {/* Kanan */}
-          <div>
-            <h3 className="text-md font-bold mb-4">Site links</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="/" className="hover:underline">
-                  Beranda
-                </a>
-              </li>
-              <li>
-                <a href="/keranjang" className="hover:underline">
-                  Keranjang
-                </a>
-              </li>
-              <li>
-                <a href="/pesanan" className="hover:underline">
-                  Pesanan
-                </a>
-              </li>
-              <li>
-                <a href="/history" className="hover:underline">
-                  History
-                </a>
-              </li>
-            </ul>
+        {/* Support */}
+        <div className="flex flex-col items-center">
+          <h3 className="text-md font-bold mb-4">Support</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="#" className="hover:underline">About</a></li>
+            <li><a href="#" className="hover:underline">Help</a></li>
+          </ul>
+        </div>
+
+        {/* Site Links */}
+        <div className="flex flex-col items-center">
+          <h3 className="text-md font-bold mb-4">Site links</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="/" className="hover:underline">Beranda</a></li>
+            <li><a href="/keranjang" className="hover:underline">Keranjang</a></li>
+            <li><a href="/pesanan" className="hover:underline">Pesanan</a></li>
+            <li><a href="/history" className="hover:underline">History</a></li>
+          </ul>
+        </div>
+
+        {/* Follow Us */}
+        <div className="flex flex-col items-center">
+          <h3 className="text-md font-bold mb-4">Follow Us</h3>
+          <div className="flex space-x-9">
+            <a href="#"><img src={instagram} alt="instagram" className="w-8 h-8" /></a>
+            <a href="#"><img src={whatsapp} alt="whatsapp" className="w-8 h-8" /></a>
           </div>
         </div>
       </div>
 
-      <div className="bg-black text-white px-20 text-sm py-4">
-        Copyright © JAJANKUY
+      {/* Garis pembatas */}
+      <hr className="my-6 border-t border-gray-600" />
+
+      {/* Copyright */}
+      <div className="text-center text-sm text-gray-300 pb-6">
+        ©2025, JAJANKUY
       </div>
     </footer>
   );
