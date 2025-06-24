@@ -57,11 +57,11 @@ export default function HomePage() {
         {/* iklan */}
         <section className="w-full mx-auto px-10 mt-40">
           <div className="relative w-full h-80 bg-lime-300 rounded-lg flex items-center justify-center text-3xl font-bold text-black">
-            <button className="absolute left-4">
+            <button className="absolute left-4 cursor-pointer">
               <ChevronLeft size={32} />
             </button>
             IKLAN
-            <button className="absolute right-4">
+            <button className="absolute right-4 cursor-pointer">
               <ChevronRight size={32} />
             </button>
           </div>
@@ -72,7 +72,7 @@ export default function HomePage() {
           <div className="grid grid-cols-5 gap-4 justify-items-center">
             {kategori.map((cat, idx) => (
               <div key={idx} className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full overflow-hidden shadow-md flex items-center justify-center bg-[#708A58]">
+                <div className="w-16 h-16 rounded-full overflow-hidden shadow-md cursor-pointer flex items-center justify-center bg-[#708A58]">
                   <img
                     src={cat.img}
                     alt={cat.name}

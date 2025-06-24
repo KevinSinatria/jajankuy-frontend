@@ -75,10 +75,10 @@ const DetailsPage = () => {
                             </button>
                         </div>
 
-                        <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 rounded-lg shadow">
+                        <button className="bg-yellow-500 hover:bg-yellow-600 text-white cursor-pointer font-semibold py-2 rounded-lg shadow">
                             Pesan
                         </button>
-                        <button className="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 rounded-lg shadow">
+                        <button className="bg-yellow-600 hover:bg-yellow-700 text-white cursor-pointer font-semibold py-2 rounded-lg shadow">
                             Tambah ke Keranjang
                         </button>
                     </div>
