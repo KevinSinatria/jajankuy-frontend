@@ -73,8 +73,8 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="w-full max-w-md px-6">
-      <h2 className="text-3xl font-bold text-center mb-8">MASUK</h2>
+    <div className="w-full max-w-150 p-10 px-20 py-10 pb-20 pt-20 mr-40 mb-30 bg-white/30 rounded-2xl border backdrop-blur-sm">
+      <h2 className="text-3xl font-semibold text-center mb-8">MASUK</h2>
 
       {/* Email */}
       <div className="mb-6">
@@ -123,9 +123,9 @@ const LoginForm = () => {
       </div>
 
       {/* Tombol Login */}
-      <div className="flex justify-center">
+      <div className="flex justify-center items-center">
         <button
-          className="bg-yellow-400 text-black font-semibold px-10 py-3 rounded-xl hover:bg-yellow-500 transition"
+          className="bg-gray-800 text-white font-semibold px-10 w-full py-3 rounded-xl hover:bg-gray-700 transition"
           onClick={handleLogin}
         >
           Masuk
@@ -133,7 +133,7 @@ const LoginForm = () => {
       </div>
 
       {/* Link Daftar */}
-      <p className="mt-6 text-center text-md">
+      <p className="mt-2 text-center text-md">
         Belum mempunyai akun?
         <a
           href="/register"

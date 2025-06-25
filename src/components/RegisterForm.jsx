@@ -98,7 +98,7 @@ export default function RegisterForm() {
   }
 
   return (
-    <div className="w-full max-w-md px-6">
+    <div className="w-full max-w-165 p-10 px-20  mr-40 mb-30 ml-50 bg-white/30 rounded-2xl border backdrop-blur-sm">
       <h2 className="text-3xl font-bold text-center mb-8">DAFTAR</h2>
 
       {/* Email */}
@@ -188,12 +188,12 @@ export default function RegisterForm() {
       </div>
 
       {/* Tombol Register */}
-      <div className="flex justify-center">
+      <div className="flex justify-center items-center">
         <button
+          className="bg-gray-800 text-white font-semibold px-10 w-full py-3 rounded-xl hover:bg-gray-700 transition"
           onClick={handleRegister}
-          className="bg-yellow-400 text-black font-semibold px-10 py-3 rounded-xl hover:bg-yellow-500 transition"
         >
-          Daftar
+          Masuk
         </button>
       </div>
 
