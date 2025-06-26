@@ -73,7 +73,7 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="w-full max-w-150 p-10 px-20 py-10 pb-20 pt-20 mr-40 mb-30 bg-white/30 rounded-2xl border backdrop-blur-sm">
+    <div className="w-full max-w-150 p-10 px-20 py-10 pb-20 pt-20 mr-40 mb-0 bg-white/30 rounded-2xl border backdrop-blur-sm">
       <h2 className="text-3xl font-semibold text-center mb-8">MASUK</h2>
 
       {/* Email */}
