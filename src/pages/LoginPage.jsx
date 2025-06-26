@@ -19,7 +19,7 @@ export default function LoginPage() {
 
       {/* Background Shapes di atas layer hijau */}
       <div className="absolute inset-0 -z-10">
-        <img src={Logo} alt="" className="mt-20 w-250 relative z-0 bottom-8" />
+        <img src={Logo} alt="" className="mt-40 w-250 relative z-0 bottom-8  md:mt-30" />
       </div>
 
       {/* Konten lain di atas semuanya */}
