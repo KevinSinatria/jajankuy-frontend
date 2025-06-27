@@ -98,7 +98,7 @@ export default function RegisterForm() {
   }
 
   return (
-    <div className="w-full max-w-165 p-10 px-20  mr-40 mb-30 ml-50 bg-white/30 rounded-2xl border backdrop-blur-sm">
+    <div className="w-full max-w-165 p-10 px-20 mr-40 mb-30 bg-white/30 rounded-2xl border backdrop-blur-sm">
       <h2 className="text-3xl font-bold text-center mb-8">DAFTAR</h2>
 
       {/* Email */}
