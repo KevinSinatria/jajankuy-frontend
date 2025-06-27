@@ -7,10 +7,11 @@ import {
     PersonStanding,
     PackageOpen,
     Clapperboard,
+    LogOut,
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import bg from '../assets/logoDashboard.png';
+import bg from '../assets/logo3.png';
 
 const iconMap = {
     Dashboard: <LayoutDashboard size={18} />,
@@ -97,6 +98,14 @@ const Sidebar = () => {
                         );
                     })}
                 </nav>
+
+                {/* logout */}
+                <div className="mt-30 pr-6">
+                    <a href='#' className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full shadow cursor-pointer font-semibold w-full">
+                        <LogOut className="w-6 h-6" />
+                        <span>Logout</span>
+                    </a>
+                </div>
             </div>
         </aside>
     );
