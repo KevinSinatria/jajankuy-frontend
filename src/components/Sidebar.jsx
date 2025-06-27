@@ -6,6 +6,7 @@ import {
     BarChart2,
     PersonStanding,
     PackageOpen,
+    Clapperboard,
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -18,6 +19,7 @@ const iconMap = {
     Statistik: <BarChart2 size={18} />,
     'Kelola User': <PersonStanding size={18} />,
     Pesanan: <PackageOpen size={18} />,
+    'Kelola Iklan': <Clapperboard size={18} />,
 };
 
 const navItems = [
@@ -27,6 +29,7 @@ const navItems = [
     { id: 4, name: 'Statistik', path: '/statistik' },
     { id: 5, name: 'Kelola User', path: '/kelola-user' },
     { id: 6, name: 'Pesanan', path: '/pesanan-admin' },
+    { id: 6, name: 'Kelola Iklan', path: '/kelola-iklan' },
 ];
 
 const ITEM_HEIGHT = 56;
