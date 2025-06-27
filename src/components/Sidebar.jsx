@@ -6,10 +6,12 @@ import {
     BarChart2,
     PersonStanding,
     PackageOpen,
+    Clapperboard,
+    LogOut,
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import bg from '../assets/logoDashboard.png';
+import bg from '../assets/logo3.png';
 
 const iconMap = {
     Dashboard: <LayoutDashboard size={18} />,
@@ -18,6 +20,7 @@ const iconMap = {
     Statistik: <BarChart2 size={18} />,
     'Kelola User': <PersonStanding size={18} />,
     Pesanan: <PackageOpen size={18} />,
+    'Kelola Iklan': <Clapperboard size={18} />,
 };
 
 const navItems = [
@@ -27,6 +30,7 @@ const navItems = [
     { id: 4, name: 'Statistik', path: '/statistik' },
     { id: 5, name: 'Kelola User', path: '/kelola-user' },
     { id: 6, name: 'Pesanan', path: '/pesanan-admin' },
+    { id: 6, name: 'Kelola Iklan', path: '/kelola-iklan' },
 ];
 
 const ITEM_HEIGHT = 56;
@@ -94,6 +98,14 @@ const Sidebar = () => {
                         );
                     })}
                 </nav>
+
+                {/* logout */}
+                <div className="mt-30 pr-6">
+                    <a href='#' className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full shadow cursor-pointer font-semibold w-full">
+                        <LogOut className="w-6 h-6" />
+                        <span>Logout</span>
+                    </a>
+                </div>
             </div>
         </aside>
     );

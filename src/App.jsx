@@ -16,6 +16,7 @@ import PesananPage from "./pages/admin/PesananPage";
 import ProfilePage from "./pages/ProfilePage";
 import HistoryPage from "./pages/HistoryPage";
 import FavoritePage from "./pages/FavoritePage";
+import KelolaIklanPage from "./pages/admin/KelolaIklanPage";
 function App() {
   return (
     <>
@@ -37,6 +38,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage/>} />
         <Route path="/history" element={<HistoryPage/>} />
         <Route path="/favorite" element={<FavoritePage />} />
+        <Route path="/kelola-iklan" element={<KelolaIklanPage />} />
       </Routes>
     </>
   );
