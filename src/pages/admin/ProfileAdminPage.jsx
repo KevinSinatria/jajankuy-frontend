@@ -18,7 +18,7 @@ const ProfileAdminPage = () => {
     <div className="flex min-h-screen bg-white">
       <Sidebar />
 
-      <div className="m-6 w-400 bg-white rounded-2xl shadow-2xl overflow-hidden relative">
+      <div className="m-6 w-300 bg-white flex-1 rounded-2xl shadow-2xl overflow-hidden relative">
         <div className="relative h-70 bg-gray-200 rounded-2xl overflow-hidden">
           <img
             src={BackroundProfile}
