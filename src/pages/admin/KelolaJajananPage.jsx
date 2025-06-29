@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CirclePlus, Camera, ArrowLeft, Upload } from 'lucide-react';
 import Sidebar from '../../components/Sidebar';
 import img from '../../assets/minuman(DataDummy).png';
+import PaginationV2 from '../../components/PaginationV2';
 
 const kategori = [
   { nama: 'Makanan Berat', img },
@@ -12,9 +13,40 @@ const kategori = [
   { nama: 'ATK', img },
 ];
 
-const KelolaLaporanPage = () => {
+const menu = [
+  { nama: 'Cireng', img },
+  { nama: 'Batagor', img },
+  { nama: 'Seblak', img },
+  { nama: 'Mie Ayam', img },
+  { nama: 'Nasi Goreng', img },
+  { nama: 'Sate', img },
+  { nama: 'Es Teh Manis', img },
+  { nama: 'Es Jeruk', img },
+  { nama: 'Kopi Susu', img },
+  { nama: 'Air Mineral', img },
+  { nama: 'Susu Coklat', img },
+  { nama: 'Susu Putih', img },
+  { nama: 'Snack', img },
+  { nama: 'Biskuit', img },
+  { nama: 'Keripik', img },
+  { nama: 'Kacang', img },
+  { nama: 'Sereal', img },
+  { nama: 'Mie Instan', img },
+  { nama: 'Beras', img },
+]
+
+const KelolaJajananPage = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showFormMenu, setShowFormMenu] = useState(false);
+  const [showFormEdit, setShowFormEdit] = useState(false);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentMenu = menu.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(menu.length / itemsPerPage);
 
   return (
     <div>
@@ -43,7 +75,7 @@ const KelolaLaporanPage = () => {
             <h2 className="text-xl font-bold text-center mb-6">Kelola Produk Jajankuy</h2>
             <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-6">
               {kategori.map((item, index) => (
-                <div key={index} className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-2xl p-4 flex items-center gap-4">
+                <div key={index} className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-2xl p-4 flex items-center gap-4 h-55">
                   <img src={item.img} alt={item.nama} className="w-35 h-35 object-cover rounded-lg" />
                   <div className="flex flex-col justify-between h-35 flex-1">
                     <p className="font-semibold text-[20px]">{item.nama}</p>
@@ -58,7 +90,7 @@ const KelolaLaporanPage = () => {
         )}
 
         {/* menu */}
-        {showMenu && !showFormMenu && (
+        {showMenu && !showFormMenu && !showFormEdit && (
           <div className="flex-1 p-10">
             <div className='flex items-center mb-6'>
               <button onClick={() => setShowMenu(false)} className='cursor-pointer'>
@@ -88,8 +120,8 @@ const KelolaLaporanPage = () => {
 
             <h2 className="text-xl font-bold text-center mb-6">Kelola Produk Jajankuy</h2>
             <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-6">
-              {kategori.map((item, index) => (
-                <div key={index} className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-2xl p-4 flex items-center gap-4">
+              {currentMenu.map((item, index) => (
+                <div key={index} className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] h-49 rounded-2xl p-4 flex items-center gap-4">
                   <img src={item.img} alt={item.nama} className="w-35 h-35 object-cover rounded-lg" />
                   <div className="flex flex-col justify-between flex-1">
                     <p className="font-semibold text-[20px]">{item.nama}</p>
@@ -97,18 +129,22 @@ const KelolaLaporanPage = () => {
                       <div className='bg-[#67EC94A3] mb-4 text-[14px] rounded-[9px] h-6 w-7 text-center'>Rp</div>
                       <p className='font-semibold text-[30px]'>0.000,-</p>
                     </div>
-                    <button className="text-sm bg-gray-900 text-white px-4 mt-4 py-1 rounded-full shadow cursor-pointer self-start w-34 h-10">
+                    <button onClick={() => setShowFormEdit(true)} className="text-sm bg-gray-900 text-white px-4 mt-4 py-1 rounded-full shadow cursor-pointer self-start w-34 h-10">
                       Edit
                     </button>
                   </div>
                 </div>
               ))}
             </div>
+            <PaginationV2
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={(page) => setCurrentPage(page)} />
           </div>
         )}
 
         {/* form tambah menu */}
-        {showFormMenu && (
+        {showFormMenu && !showFormEdit && (
           <div className='flex-1 justify-center items-center'>
             <div className='p-10'>
               <div className='flex items-center mb-6'>
@@ -170,6 +206,86 @@ const KelolaLaporanPage = () => {
                 <button className="w-full bg-black text-white py-2 rounded-lg shadow hover:opacity-90 transition">
                   Kirim
                 </button>
+
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* form edit menu */}
+        {showFormEdit && (
+          <div className='flex-1 justify-center items-center'>
+            <div className='p-10'>
+              <div className='flex items-center mb-6'>
+                <button onClick={() => setShowFormEdit(false)} className='cursor-pointer'>
+                  <ArrowLeft className='w-10 h-10' />
+                </button>
+                <div className='flex-1 text-center justify-center'>
+                  <h2 className="text-xl font-bold text-center">Edit Produk!</h2>
+                </div>
+              </div>
+              <div className="w-full mx-auto bg-white p-20 rounded-2xl shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-32 h-32 border rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <img src={img} />
+                  </div>
+                  <div>
+                    <p className="font-medium">Upload Gambar Jajanan</p>
+                    <label className="flex items-center gap-2 cursor-pointer text-sm text-gray-700 mt-1">
+                      <input type="file" className="hidden" />
+                      <span className="px-3 py-1 border rounded bg-gray-100">Choose File</span>
+                      <Upload className="w-4 h-4" />
+                    </label>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <label className="block mb-1 text-sm font-medium">Kategori Jajanan</label>
+                  <select className="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black transition duration-200 cursor-pointer">
+                    <option value="">Pilih Kategori</option>
+                    <option value="sembako">Sembako</option>
+                    <option value="makanan">Makanan</option>
+                    <option value="minuman">Minuman</option>
+                  </select>
+                </div>
+
+                <div className="mb-4">
+                  <label className="block mb-1 text-sm font-medium">Nama Jajanan</label>
+                  <input
+                    type="text"
+                    placeholder='Nama Jajanan'
+                    // defaultValue={editData.nama}
+                    className="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black transition duration-200" />
+                </div>
+
+                <div className="mb-4">
+                  <label className="block mb-1 text-sm font-medium">Harga Jajanan</label>
+                  <div className="relative flex items-center">
+                    <div className="absolute left-2 bg-green-200 text-sm bottom-6 w-6 h-4.4 text-center rounded text-[12px]">
+                      Rp
+                    </div>
+                    <input
+                      type="number"
+                      placeholder="0,-"
+                      className="w-full pl-10 border rounded-lg px-3 py-2 text-xl font-semibold text-black focus:outline-none focus:ring-2 focus:ring-black transition duration-200"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <label className="block mb-1 text-sm font-medium">Varian Jajanan</label>
+                  <select className="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black transition duration-200 cursor-pointer">
+                    <option value="">Pilih Varian</option>
+                    <option value="pedas">Pedas</option>
+                    <option value="manis">Manis</option>
+                    <option value="original">Original</option>
+                  </select>
+                </div>
+
+                <button className="w-full bg-black text-white py-2 rounded-lg shadow hover:opacity-90 transition">
+                  Kirim
+                </button>
+
               </div>
             </div>
           </div>
@@ -179,4 +295,4 @@ const KelolaLaporanPage = () => {
   );
 };
 
-export default KelolaLaporanPage;
+export default KelolaJajananPage;
