@@ -3,7 +3,7 @@ import pp from "../assets/wonyoung.png";
 import tong from "../assets/tongsampah.png";
 import pensil from "../assets/Pencil.png";
 
-function ProfileUserInAdmin({ username, email, role, id }) {
+function ProfileUserInAdmin({ username, email, role, id, onEdit, onDelete }) {
   const [hoverUp, setHoverUp] = useState(false);
   const cardRef = useRef(null);
 
@@ -57,10 +57,10 @@ function ProfileUserInAdmin({ username, email, role, id }) {
               {id}
             </div>
             <div className="">
-              <button className="mx-1">
+              <button className="mx-1 cursor-pointer" onClick={onEdit} >
                 <img src={pensil} alt="" />
               </button>
-              <button className="mx-1">
+              <button className="mx-1" onClick={onDelete}>
                 <img src={tong} alt="" />
               </button>
             </div>

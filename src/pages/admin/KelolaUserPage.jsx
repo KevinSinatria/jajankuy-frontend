@@ -17,7 +17,12 @@ const KelolaUserPage = () => {
     { id: 8, username: "yassir", email: "yassir@gmail.com", role: "siswa" },
     { id: 9, username: "nazmi", email: "nazmi@gmail.com", role: "siswa" },
     { id: 10, username: "shafa", email: "shafa@gmail.com", role: "siswa" },
-    { id: 11, username: "ghaisani", email: "ghaisani@gmail.com", role: "siswa", },
+    {
+      id: 11,
+      username: "ghaisani",
+      email: "ghaisani@gmail.com",
+      role: "siswa",
+    },
     { id: 12, username: "luthfi", email: "luthfi@gmail.com", role: "siswa" },
     { id: 13, username: "rian", email: "rian@gmail.com", role: "siswa" },
     { id: 14, username: "alif", email: "alif@gmail.com", role: "siswa" },
@@ -33,7 +38,12 @@ const KelolaUserPage = () => {
     { id: 24, username: "yassir", email: "yassir2@gmail.com", role: "siswa" },
     { id: 25, username: "nazmi", email: "nazmi2@gmail.com", role: "siswa" },
     { id: 26, username: "shafa", email: "shafa2@gmail.com", role: "siswa" },
-    { id: 27, username: "ghaisani", email: "ghaisani2@gmail.com", role: "siswa", },
+    {
+      id: 27,
+      username: "ghaisani",
+      email: "ghaisani2@gmail.com",
+      role: "siswa",
+    },
     { id: 28, username: "luthfi", email: "luthfi2@gmail.com", role: "siswa" },
     { id: 29, username: "rian", email: "rian2@gmail.com", role: "siswa" },
     { id: 30, username: "alif", email: "alif2@gmail.com", role: "siswa" },
@@ -42,12 +52,36 @@ const KelolaUserPage = () => {
   const [users, setUsers] = useState(initialUsers);
   const [currentPage, setCurrentPage] = useState(1);
   const [showForm, setShowForm] = useState(false);
+  const [editingUser, setEditingUser] = useState(null);
 
   const itemsPerPage = 9;
   const totalPages = Math.ceil(users.length / itemsPerPage);
   const indexOfLastUser = currentPage * itemsPerPage;
   const indexOfFirstUser = indexOfLastUser - itemsPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+  const handleSubmitUser = (userData) => {
+    if (editingUser) {
+      // Edit mode
+      setUsers((prevUsers) =>
+        prevUsers.map((u) =>
+          u.id === editingUser.id ? { ...u, ...userData } : u
+        )
+      );
+    } else {
+      // Add mode
+      const newId = users.length + 1;
+      setUsers([...users, { id: newId, ...userData }]);
+    }
+
+    setShowForm(false);
+    setEditingUser(null); // reset edit mode
+  };
+
+  const handleEditUser = (user) => {
+    setEditingUser(user);
+    setShowForm(true);
+  };
 
   const goToPage = (page) => {
     if (page >= 1 && page <= totalPages) {
@@ -61,6 +95,13 @@ const KelolaUserPage = () => {
     setShowForm(false);
   };
 
+  const handleDeleteUser = (id) => {
+    const confirmed = window.confirm("Yakin ingin menghapus user ini?");
+    if (confirmed) {
+      setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
+    }
+  };
+
   return (
     <div className="flex min-h-screen bg-white">
       <Sidebar />
@@ -71,8 +112,12 @@ const KelolaUserPage = () => {
 
           {showForm ? (
             <UserForm
-              onSubmit={handleAddUser}
-              onCancel={() => setShowForm(false)}
+              onSubmit={handleSubmitUser}
+              onCancel={() => {
+                setShowForm(false);
+                setEditingUser(null);
+              }}
+              initialData={editingUser}
             />
           ) : (
             <>
@@ -88,7 +133,13 @@ const KelolaUserPage = () => {
 
                 <div className="mt-5 flex justify-center">
                   <div className="grid grid-cols-5 gap-15">
-                    <AddUser onClick={() => setShowForm(true)} />
+                    <AddUser
+                      onClick={() => {
+                        setEditingUser(null); // reset mode edit
+                        setShowForm(true); // tampilkan form
+                      }}
+                    />
+
                     {currentUsers.map((user) => (
                       <ProfileUserInAdmin
                         key={user.id}
@@ -96,6 +147,8 @@ const KelolaUserPage = () => {
                         username={user.username}
                         email={user.email}
                         role={user.role}
+                        onEdit={() => handleEditUser(user)}
+                        onDelete={() => handleDeleteUser(user.id)}
                       />
                     ))}
                   </div>
