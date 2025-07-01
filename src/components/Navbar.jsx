@@ -47,7 +47,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 lg:top-4 left-1/2 -translate-x-1/2 w-full max-w-7xl z-100 backdrop-blur-md transition-all duration-300 shadow-md lg:border lg:border-black lg:rounded-full px-6 py-3' : 'bg-transparent py-4'`}>
+      className={`fixed top-0 lg:top-4 left-1/2 -translate-x-1/2 w-full max-w-7xl z-[999] backdrop-blur-md transition-all duration-300 shadow-md lg:border lg:border-black lg:rounded-full px-6 py-3' : 'bg-transparent py-4'`}>
       <div className="w-full lg:grid lg:grid-cols-3 lg:items-center">
 
         {/* logo */}
@@ -61,15 +61,15 @@ const Navbar = () => {
         </Link>
 
         {/* searchbar */}
-        <div className="hidden lg:flex justify-center">
-          <div className="relative w-80">
+        <div className="hidden lg:flex justify-center lg:col-span-2">
+          <div className="relative w-90 px-4">
             <input
               type="text"
               placeholder="Cari..."
               className="w-full px-4 py-2 pr-10 border border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition duration-100"
             />
             <Search
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+              className="absolute right-7 top-1/2 -translate-y-1/2 text-gray-500"
               size={20}
             />
           </div>
@@ -101,7 +101,7 @@ const Navbar = () => {
         <nav
           aria-label="Header Navigation"
           className={`${open ? 'pt-4 max-h-96' : 'max-h-0'
-            } flex w-full flex-col items-center overflow-hidden transition-all duration-300 lg:col-start-3 lg:max-h-full lg:flex-row lg:justify-end`}
+            } flex w-full flex-col items-center overflow-hidden transition-all duration-300 lg:col-start-4 lg:max-h-full lg:flex-row lg:justify-end`}
         >
           <ul className="flex w-full flex-col items-center space-y-2 lg:flex-row lg:space-y-0 lg:justify-end">
             {/* keranjang dan wishlist layar desktop */}
@@ -112,13 +112,13 @@ const Navbar = () => {
             </li>
             <li className="hidden lg:flex lg:mr-6">
               <Link to="/favorite" className="flex items-center" onClick={closeNavbar}>
-                <Heart className="text-gray-700" size={20} />
+                <Heart className="text-black" size={20} />
               </Link>
             </li>
 
             {/* navigasi utama */}
             {navItems.map((item) => (
-              <li key={item.id} className="lg:mr-12">
+              <li key={item.id} className="lg:mr-12 text-black">
                 <Link
                   to={item.path}
                   className={`transition ${location.pathname === item.path ? '' : ''}`}
@@ -156,7 +156,7 @@ const Navbar = () => {
             ) : (
               <Link
                 to="/login"
-                className="flex items-center whitespace-nowrap mt-0.5 lg:mt-0"
+                className="flex items-center whitespace-nowrap mt-0.5 lg:mt-0 text-black"
                 onClick={closeNavbar}
               >
                 Masuk

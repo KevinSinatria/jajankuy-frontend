@@ -4,8 +4,11 @@ const Card = (props) => {
   return (
     <div
       className="h-[380px] w-[253px] rounded-2xl m-4 border shadow-md 
-                 p-4 flex flex-col justify-between bg-white transition-all duration-300 
-                 hover:shadow-lg"
+             p-4 flex flex-col justify-between transition-all duration-300 
+             hover:shadow-lg"
+      style={{
+        backgroundImage: 'linear-gradient(to top, #CCF971, #E2FFA6, #FFFFFF)'
+      }}
     >
       {/* gambar produk */}
       <div className="flex justify-center mt-2">
