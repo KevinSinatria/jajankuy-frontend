@@ -2,15 +2,16 @@ import React, { useContext, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import makananImg from "../assets/makanan.png";
-import minumanImg from "../assets/minuman.png";
-import camilanImg from "../assets/camilan.png";
-import alatTulisImg from "../assets/alat-tulis.png";
-import lainnyaImg from "../assets/lainnya.png";
+import makananImg from "../assets/kategori1.png";
+import minumanImg from "../assets/kategori2.png";
+import camilanImg from "../assets/kategori3.png";
+import alatTulisImg from "../assets/kategori4.png";
+import lainnyaImg from "../assets/kategori5.png";
 import leMineral from "../assets/minuman(DataDummy).png";
 import Card from "../components/Card";
 import Pagination from "../components/Pagination";
 import { AuthProvider } from "../contexts/AuthContext";
+import iklan from "../assets/iklan.png";
 
 export default function HomePage() {
 
@@ -51,16 +52,16 @@ export default function HomePage() {
 
   return (
     <div>
-      <main className="w-full min-h-screen flex flex-col bg-gradient-to-br from-green-50 to-white text-neutral-600">
+      <main className="w-full min-h-screen flex flex-col text-neutral-600" style={{ backgroundImage: 'linear-gradient(to top, #83A24A, #AEC77D, #D7EAAE)', }}>
         <Navbar />
 
         {/* iklan */}
         <section className="w-full mx-auto px-10 mt-40">
-          <div className="relative w-full h-80 bg-lime-300 rounded-lg flex items-center justify-center text-3xl font-bold text-black">
+          <div className="relative w-full h-[402px] border rounded-lg flex items-center justify-center text-3xl font-bold text-black bg-cover bg-center" style={{ backgroundImage: `url(${iklan})` }}>
             <button className="absolute left-4 cursor-pointer">
               <ChevronLeft size={32} />
             </button>
-            IKLAN
+            <img src="" alt="" />
             <button className="absolute right-4 cursor-pointer">
               <ChevronRight size={32} />
             </button>
@@ -72,15 +73,14 @@ export default function HomePage() {
           <div className="grid grid-cols-5 gap-4 justify-items-center">
             {kategori.map((cat, idx) => (
               <div key={idx} className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full overflow-hidden shadow-md cursor-pointer flex items-center justify-center bg-[#708A58]">
+                <div className="h-20 rounded-full overflow-hidden shadow-md cursor-pointer flex items-center justify-center bg-[#B4DC62]">
                   <img
                     src={cat.img}
                     alt={cat.name}
-                    style={{ width: `${cat.width}px`, height: `${cat.height}px` }}
-                    className="object-contain"
+                    className="object-contain w-full h-full"
                   />
                 </div>
-                <span className="mt-2 font-medium">{cat.name}</span>
+                <span className="mt-2 font-medium text-black">{cat.name}</span>
               </div>
             ))}
           </div>
