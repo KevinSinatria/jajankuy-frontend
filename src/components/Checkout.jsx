@@ -97,16 +97,16 @@ function Checkout(props) {
         </div>
 
         {/* Catatan */}
-        <div>
+        <div className="mt-6">
           <label className="block text-2xl font-light mb-2">Catatan</label>
           <textarea
-            className="w-full h-40 p-4 rounded-xl border shadow resize-none focus:outline-none"
+            className="w-full h-40 p-4 rounded-xl border shadow resize-none focus:outline-none bg-white"
             placeholder="Tulis catatan di sini... (bila ada)"
           />
         </div>
 
         {/* Total */}
-        <div className="bg-gray-200 rounded-xl shadow p-6 text-lg mt-10">
+        <div className="bg-[#EEEEEECC] border rounded-xl shadow p-6 text-lg mt-10">
           <div className="flex justify-between mb-2">
             <span className="font-light text-2xl">Total :</span>
             <span className="font-semibold">Rp. 7.000,00</span>

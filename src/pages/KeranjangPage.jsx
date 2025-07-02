@@ -38,7 +38,7 @@ const KeranjangPage = () => {
         .reduce((acc, item) => acc + item.harga * item.qty, 0);
 
     return (
-        <div className="flex flex-col min-h-screen bg-gradient-to-br from-white to-lime-50 text-gray-800">
+        <div className="flex flex-col min-h-screen text-gray-800" style={{ backgroundImage: 'linear-gradient(to top, #83A24A, #AEC77D, #D7EAAE)', }}>
             <Navbar />
             <main className='flex-1'>
                 <div className="container mx-auto px-6 py-10">
@@ -98,7 +98,7 @@ const KeranjangPage = () => {
                                     Rp. {totalHarga.toLocaleString("id-ID")},00
                                 </p>
                                 <button className="w-full bg-yellow-400 text-black font-semibold py-2 rounded-md hover:bg-yellow-500 transition">
-                                    Pesan
+                                    Checkout
                                 </button>
                             </div>
                         </div>

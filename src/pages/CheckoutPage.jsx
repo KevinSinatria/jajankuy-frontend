@@ -5,7 +5,7 @@ import Checkout from "../components/Checkout";
 function CheckoutPage() {
   return (
     <div>
-      <div className="w-full min-h-screen flex flex-col bg-gradient-to-br from-green-50 to-white text-neutral-600">
+      <div className="w-full min-h-screen flex flex-col" style={{ backgroundImage: 'linear-gradient(to top, #83A24A, #AEC77D, #D7EAAE)', }}>
         <Navbar />
         <Checkout/>
       </div>
