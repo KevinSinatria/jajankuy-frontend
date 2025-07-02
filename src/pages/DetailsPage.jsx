@@ -35,12 +35,12 @@ const DetailsPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white text-neutral-800">
+        <div className="min-h-screen text-neutral-800" style={{ backgroundImage: 'linear-gradient(to top, #83A24A, #AEC77D, #D7EAAE)', }}>
             <Navbar />
 
             {/* kontainer produk utama */}
             <section className="max-w-7xl mx-auto px-4 pt-40">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center px-8 border rounded-2xl h-[421px]" style={{ backgroundImage: 'linear-gradient(to top, #CCF971, #E2FFA6, #FFFFFF)', }}>
                     <div className="flex justify-center">
                         <img
                             src={productImage}
@@ -64,7 +64,7 @@ const DetailsPage = () => {
                         </p>
                     </div>
 
-                    <div className="bg-white rounded-xl shadow-[0_0_25px_rgba(0,0,0,0.2)] p-8 w-full max-w-sm mx-auto lg:mx-0 flex flex-col gap-4">
+                    <div className="rounded-xl shadow-[0_0_25px_rgba(0,0,0,0.2)] p-8 w-full max-w-sm mx-auto lg:mx-0 flex flex-col gap-4 border" style={{ backgroundImage: 'linear-gradient(to top, #E2FFA6, #FFFFFF)', }}>
                         <div className="flex items-center justify-between px-4 py-4 rounded-md">
                             <button onClick={decrement} className="text-gray-600 hover:text-black">
                                 <CircleMinus size={30} />

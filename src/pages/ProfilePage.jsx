@@ -26,7 +26,7 @@ function ProfilePage() {
   }
 
   return (
-    <div className="w-full min-h-screen flex flex-col bg-white text-neutral-700">
+    <div className="w-full min-h-screen flex flex-col text-neutral-700" style={{ backgroundImage: 'linear-gradient(to top, #83A24A, #AEC77D, #D7EAAE)', }}>
       <Navbar />
 
       <div className="flex flex-col items-center">

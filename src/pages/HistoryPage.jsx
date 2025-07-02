@@ -76,7 +76,7 @@ function HistoryPage() {
   ]);
 
   return (
-    <div className="w-full min-h-screen flex flex-col bg-gradient-to-br from-green-50 to-white text-neutral-600">
+    <div className="w-full min-h-screen flex flex-col" style={{ backgroundImage: 'linear-gradient(to top, #83A24A, #AEC77D, #D7EAAE)', }}>
       <Navbar />
 
       <div className="mt-30 px-4 sm:px-6 lg:px-10">
@@ -152,12 +152,6 @@ function HistoryPage() {
                         className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-5 py-2 rounded-lg transition duration-300 w-full text-center"
                       >
                         Pesan Lagi
-                      </a>
-                      <a
-                        href="/"
-                        className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-5 py-2 rounded-lg transition duration-300 w-full text-center"
-                      >
-                        Hapus
                       </a>
                     </div>
                   </div>

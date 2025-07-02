@@ -35,7 +35,7 @@ const FavoritePage = () => {
     };
 
     return (
-        <div className="bg-gradient-to-br from-white to-lime-50 min-h-screen">
+        <div className="min-h-screen" style={{ backgroundImage: 'linear-gradient(to top, #83A24A, #AEC77D, #D7EAAE)', }}>
             <Navbar />
             <div className="px-6 pt-24 pb-14">
                 <h1 className="text-3xl font-semibold text-center mt-14">Favorite</h1>
