@@ -95,6 +95,7 @@ const KelolaUserPage = () => {
     setShowForm(false);
   };
 
+  // ini bisa di ganti sama sweatalert 
   const handleDeleteUser = (id) => {
     const confirmed = window.confirm("Yakin ingin menghapus user ini?");
     if (confirmed) {
