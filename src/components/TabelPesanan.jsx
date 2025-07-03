@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import user from "../assets/userLogoInAdmin.png";
 import calender from "../assets/Calendar.png";
 import mata from "../assets/Eye.png";
@@ -8,9 +8,10 @@ import sampah from "../assets/Bin.png";
 import PaginationV2 from "./PaginationV2";
 import TabelPesananRiwayat from "./TabelPesananRiwayat";
 import { useNavigate } from "react-router-dom";
+import { OrderContext } from "../contexts/OrderContext";
 
 function TabelPesanan() {
-  const data = [
+  const [data, setData] = useState([
     {
       id: "#1123",
       nama: "Wonyoung",
@@ -123,7 +124,7 @@ function TabelPesanan() {
       tanggal: "Apr 22, 2025",
       total: "Rp 130.000.00",
     },
-  ];
+  ]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedOrderId, setSelectedOrderId] = useState(null);
@@ -137,11 +138,12 @@ function TabelPesanan() {
       navigate("/detail-pesanan-admin", { state: item });
     }
   };
+  const { allOrders } = useContext(OrderContext);
 
   const [riwayatPage, setRiwayatPage] = useState(true);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = allOrders.slice(indexOfFirstItem, indexOfLastItem);
   const [confirmedOrders, setConfirmedOrders] = useState([]);
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -167,13 +169,25 @@ function TabelPesanan() {
               <div className="flex gap-2 justify-center">
                 {selectedOrderId && (
                   <button
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation(); // agar tidak trigger navigasi
+
                       const found = currentItems.find(
                         (_, i) =>
                           `${_.id}-${indexOfFirstItem + i}` === selectedOrderId
                       );
+
                       if (found) {
-                        setConfirmedOrders([...confirmedOrders, found]);
+                        setData((prev) =>
+                          prev.filter(
+                            (_, i) =>
+                              `${_.id}-${indexOfFirstItem + i}` !==
+                              selectedOrderId
+                          )
+                        ); // hapus dari data utama
+
+                        addToConfirmed(found); // simpan ke context riwayat
+
                         setSelectedOrderId(null);
                       }
                     }}
@@ -209,9 +223,9 @@ function TabelPesanan() {
                   <div className="font-semibold">{item.tanggal}</div>
                   <div className="font-semibold">{item.total}</div>
                   <div className="flex justify-center gap-3">
-                    <button title="Lihat">
+                    {/* <button title="Lihat">
                       <img src={mata} alt="" />
-                    </button>
+                    </button> */}
                     <button title="Edit">
                       <img src={pensil} alt="" />
                     </button>
@@ -240,7 +254,15 @@ function TabelPesanan() {
           </button>
         </>
       ) : (
-        <TabelPesananRiwayat data={confirmedOrders} />
+        <>
+          <TabelPesananRiwayat data={confirmedOrders} />
+          <button
+            onClick={() => setRiwayatPage(true)}
+            className="bg-black w-70 p-2 absolute right-0 bottom-[50px] rounded-full mr-[180px] text-xl text-center text-white font-semibold transition-all duration-300 hover:bg-white hover:text-black hover:border-2 hover:scale-105 hover:shadow-lg"
+          >
+            Lihat Pesanan
+          </button>
+        </>
       )}
     </div>
   );
