@@ -12,7 +12,7 @@ const Card = (props) => {
     >
       {/* gambar produk */}
       <div className="flex justify-center mt-2">
-        <img src={props.img} alt="Gambar Produk" className="h-28 object-contain" />
+        <img src={props.img} alt="Gambar Produk" loading="lazy" className="h-28 object-contain" />
       </div>
 
       {/* nama produk */}

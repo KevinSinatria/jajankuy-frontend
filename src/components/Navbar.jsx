@@ -43,6 +43,7 @@ const Navbar = () => {
     { id: 1, name: 'Beranda', path: '/' },
     { id: 2, name: 'Pesanan', path: '/checkout' },
     { id: 3, name: 'Riwayat', path: '/history' },
+    { id: 4, name: 'Tentang', path: '/about' },
   ];
 
   return (
@@ -60,7 +61,7 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* searchbar */}
+        {/* searchbar
         <div className="hidden lg:flex justify-center lg:col-span-2">
           <div className="relative w-90 px-4">
             <input
@@ -73,7 +74,7 @@ const Navbar = () => {
               size={20}
             />
           </div>
-        </div>
+        </div> */}
 
         {/* logo burger */}
         <label
