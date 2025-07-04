@@ -25,8 +25,8 @@ function Footer() {
         <div className="flex flex-col items-center">
           <h3 className="text-md font-bold mb-4">Support</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:underline">About</a></li>
-            <li><a href="#" className="hover:underline">Help</a></li>
+            <li><a href="/about" className="hover:underline">About</a></li>
+            <li><a href="/help" className="hover:underline">Help</a></li>
           </ul>
         </div>
 
