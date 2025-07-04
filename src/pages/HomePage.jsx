@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import makananImg from "../assets/kategori1.png";
@@ -12,6 +11,7 @@ import Card from "../components/Card";
 import Pagination from "../components/Pagination";
 import { AuthProvider } from "../contexts/AuthContext";
 import iklan from "../assets/iklan.png";
+import NavbarProduct from "../components/NavbarProduct";
 
 export default function HomePage() {
 
@@ -53,7 +53,7 @@ export default function HomePage() {
   return (
     <div>
       <main className="w-full min-h-screen flex flex-col text-neutral-600" style={{ backgroundImage: 'linear-gradient(to top, #83A24A, #AEC77D, #D7EAAE)', }}>
-        <Navbar />
+        <NavbarProduct />
 
         {/* iklan */}
         <section className="w-full mx-auto px-10 mt-40">
