@@ -69,7 +69,7 @@ const Navbar = () => {
               className="w-full px-4 py-2 pr-10 border border-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition duration-100"
             />
             <Search
-              className="absolute right-7 top-1/2 -translate-y-1/2 text-gray-500"
+              className="absolute right-7 top-1/2 -translate-y-1/2 text-black"
               size={20}
             />
           </div>
@@ -107,7 +107,7 @@ const Navbar = () => {
             {/* keranjang dan wishlist layar desktop */}
             <li className="hidden lg:flex lg:mr-6">
               <Link to="/keranjang" className="flex items-center" onClick={closeNavbar}>
-                <ShoppingCart className="text-gray-700" size={20} />
+                <ShoppingCart className="text-black" size={20} />
               </Link>
             </li>
             <li className="hidden lg:flex lg:mr-6">
@@ -136,10 +136,10 @@ const Navbar = () => {
             {/* icon keranjang dan wishlist layar mobile */}
             <div className="flex lg:hidden space-x-7 mt-3">
               <Link to="/keranjang" onClick={closeNavbar}>
-                <ShoppingCart className="text-gray-700" size={20} />
+                <ShoppingCart className="text-black" size={20} />
               </Link>
               <Link to="/wishlist" onClick={closeNavbar}>
-                <Heart className="text-gray-700" size={20} />
+                <Heart className="text-black" size={20} />
               </Link>
             </div>
 

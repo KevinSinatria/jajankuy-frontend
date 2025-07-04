@@ -18,7 +18,9 @@ import HistoryPage from "./pages/HistoryPage";
 import FavoritePage from "./pages/FavoritePage";
 import KelolaIklanPage from "./pages/admin/KelolaIklanPage";
 import NotFoundPage from "./components/NotFoundPage";
+import AboutPage from "./pages/AboutPage";
 import DetailAdminPage from "./pages/admin/DetailAdminPage";
+
 function App() {
   return (
     <>
@@ -42,6 +44,7 @@ function App() {
         <Route path="/favorite" element={<FavoritePage />} />
         <Route path="/kelola-iklan" element={<KelolaIklanPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </>
   );
