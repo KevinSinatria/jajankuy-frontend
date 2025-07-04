@@ -18,6 +18,7 @@ import HistoryPage from "./pages/HistoryPage";
 import FavoritePage from "./pages/FavoritePage";
 import KelolaIklanPage from "./pages/admin/KelolaIklanPage";
 import NotFoundPage from "./components/NotFoundPage";
+import DetailAdminPage from "./pages/admin/DetailAdminPage";
 function App() {
   return (
     <>
@@ -34,8 +35,8 @@ function App() {
         <Route path="/kelola-jajanan" element={<KelolaJajananPage />} />
         <Route path="/kelola-user" element={<KelolaUserPage />} />
         <Route path="/statistik" element={<StatistikPage />} />
-        <Route path="/pesanan" element={<PesananPage />} />
         <Route path="/pesanan-admin" element={<PesananPage />} />
+        <Route path="/detail-pesanan-admin" element={<DetailAdminPage />} />
         <Route path="/profile" element={<ProfilePage/>} />
         <Route path="/history" element={<HistoryPage/>} />
         <Route path="/favorite" element={<FavoritePage />} />
