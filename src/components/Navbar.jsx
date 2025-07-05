@@ -139,7 +139,7 @@ const Navbar = () => {
               <Link to="/keranjang" onClick={closeNavbar}>
                 <ShoppingCart className="text-black" size={20} />
               </Link>
-              <Link to="/wishlist" onClick={closeNavbar}>
+              <Link to="/favorite" onClick={closeNavbar}>
                 <Heart className="text-black" size={20} />
               </Link>
             </div>

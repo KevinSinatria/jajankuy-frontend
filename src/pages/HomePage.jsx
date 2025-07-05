@@ -88,7 +88,7 @@ export default function HomePage() {
 
         {/* produk */}
         <section className="w-full mx-auto px-4 mt-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 place-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-8 place-items-center">
             {currentProduk.map((p, i) => (
               <Card
                 key={i}

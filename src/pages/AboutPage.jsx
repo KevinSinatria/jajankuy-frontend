@@ -17,7 +17,7 @@ const AboutPage = () => {
         <img src={Bg} alt="background" className="w-full h-full object-cover" />
 
         <div
-          className="absolute lg:left-47 px-15 top-100 text-center text-white z-50" style={{ textShadow: '0px 0px 6px rgba(0,0,0,0.9)' }} >
+          className="absolute 2xl:left-41 lg:px-7 px-15 top-100 text-center text-white z-50" style={{ textShadow: '0px 0px 6px rgba(0,0,0,0.9)' }} >
           <p className="font-bold text-[9vw] sm:text-[85px] leading-tight">Tentang Kami</p>
           <p className="font-medium text-[6vw] sm:text-[40px]">Yuk kenalan sama Jajankuy!</p>
         </div>

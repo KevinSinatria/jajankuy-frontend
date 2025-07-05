@@ -3,14 +3,14 @@ import ProfilePic from '../assets/profile.png';
 
 const profiles = [
   { name: "Yassir", bidang: "Frontend Developer" },
-  { name: "Waqqir", bidang: "Backend Developer" },
-  { name: "Agung", bidang: "UI/UX Designer" },
-  { name: "Kevin", bidang: "Project Manager" },
-  { name: "Syifa", bidang: "QA + Development" },
-  { name: "Nazmi", bidang: "CTO (Chief Technology Officer)" },
-  { name: "Luthfi", bidang: "Frontend Developer" },
-  { name: "Rendy", bidang: "Backend Developer" },
-  { name: "Eqy", bidang: "UI/UX Designer" },
+  { name: "Nazmi", bidang: "Backend Developer" },
+  { name: "Syifa", bidang: "UI/UX Designer" },
+  { name: "Agung", bidang: "Project Manager" },
+  { name: "Rendy", bidang: "QA + Development" },
+  { name: "Kevin", bidang: "CTO (Chief Technology Officer)" },
+  { name: "Waqqir", bidang: "Frontend Developer" },
+  { name: "Luthfi", bidang: "UI/UX Designer" },
+  { name: "Eqy", bidang: "Marketing" },
 ];
 
 const CardProfile = () => {
