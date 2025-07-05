@@ -20,6 +20,7 @@ import KelolaIklanPage from "./pages/admin/KelolaIklanPage";
 import NotFoundPage from "./components/NotFoundPage";
 import AboutPage from "./pages/AboutPage";
 import DetailAdminPage from "./pages/admin/DetailAdminPage";
+import SkPage from "./pages/SkPage";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/kelola-iklan" element={<KelolaIklanPage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/sk" element={<SkPage />} />
       </Routes>
     </>
   );
