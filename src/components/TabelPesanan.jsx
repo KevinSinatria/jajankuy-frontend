@@ -170,7 +170,7 @@ function TabelPesanan() {
                 {selectedOrderId && (
                   <button
                     onClick={(e) => {
-                      e.stopPropagation(); // agar tidak trigger navigasi
+                      e.stopPropagation();
 
                       const found = currentItems.find(
                         (_, i) =>
@@ -184,9 +184,9 @@ function TabelPesanan() {
                               `${_.id}-${indexOfFirstItem + i}` !==
                               selectedOrderId
                           )
-                        ); // hapus dari data utama
+                        );
 
-                        addToConfirmed(found); // simpan ke context riwayat
+                        addToConfirmed(found);
 
                         setSelectedOrderId(null);
                       }
