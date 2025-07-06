@@ -41,9 +41,9 @@ const Navbar = () => {
 
   const navItems = [
     { id: 1, name: 'Beranda', path: '/' },
-    { id: 2, name: 'Pesanan', path: '/checkout' },
-    { id: 3, name: 'Riwayat', path: '/history' },
-    { id: 4, name: 'Tentang', path: '/about' },
+    { id: 2, name: 'Tentang', path: '/about' },
+    { id: 3, name: 'Pesanan', path: '/checkout' },
+    { id: 4, name: 'Riwayat', path: '/history' },
   ];
 
   return (
