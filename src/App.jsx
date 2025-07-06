@@ -21,6 +21,7 @@ import NotFoundPage from "./components/NotFoundPage";
 import AboutPage from "./pages/AboutPage";
 import DetailAdminPage from "./pages/admin/DetailAdminPage";
 import SkPage from "./pages/SkPage";
+import HelpPage from "./pages/HelpPage";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/sk" element={<SkPage />} />
+        <Route path="/help" element={<HelpPage />} />
       </Routes>
     </>
   );
