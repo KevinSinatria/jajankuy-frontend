@@ -7,11 +7,11 @@ import Footer from "./Footer";
 function Checkout(props) {
 
   const navigate = useNavigate();
-  function handleBatal(){
+  function handleBatal() {
     navigate("/");
   }
   return (
-    <div className="pt-40">
+    <div className="pt-30 md:pt-40">
       <CheckoutProses />
 
       {/* card */}
@@ -87,7 +87,7 @@ function Checkout(props) {
         </button>
       </div>
 
-      <div className="px-30 py-10">
+      <div className="px-5 md:px-30 py-10">
         {/* Atas Nama */}
         <div>
           <label className=" text-2xl font-light mb-2">Atas Nama</label>
@@ -125,19 +125,21 @@ function Checkout(props) {
       </div>
 
       {/* tombol pesan */}
-      <div className="flex justify-center">
-        <button className="w-full max-w-[700px] px-6 py-3 bg-[#FFB823] border-2 text-black font-semibold rounded-full shadow hover:bg-[#B4DC62] hover:scale-[1.01] transition duration-300">
-          Pesan
-        </button>
-      </div>
-      {/* tombol batal */}
-      <div className="flex justify-center mb-50">
-        <button onClick={handleBatal} className="w-full max-w-[700px] px-6 py-3 bg-[#FFB823] border-2 mt-5 text-black font-semibold rounded-full shadow hover:bg-[#B4DC62] hover:scale-[1.01] transition duration-300">
-          Batal
-        </button>
+      <div className="px-5">
+        <div className="flex justify-center">
+          <button className="w-full max-w-[700px] px-6 py-3 bg-[#FFB823] border-2 text-black font-semibold rounded-full shadow hover:bg-[#B4DC62] hover:scale-[1.01] transition duration-300">
+            Pesan
+          </button>
+        </div>
+        {/* tombol batal */}
+        <div className="flex justify-center mb-50">
+          <button onClick={handleBatal} className="w-full max-w-[700px] px-6 py-3 bg-[#FFB823] border-2 mt-5 text-black font-semibold rounded-full shadow hover:bg-[#B4DC62] hover:scale-[1.01] transition duration-300">
+            Batal
+          </button>
+        </div>
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }

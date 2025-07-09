@@ -56,7 +56,7 @@ export default function HomePage() {
         <NavbarProduct />
 
         {/* iklan */}
-        <section className="w-full mx-auto px-10 mt-40">
+        <section className="w-full mx-auto px-5 mt-40">
           <div className="relative w-full h-[402px] border rounded-lg flex items-center justify-center text-3xl font-bold text-black bg-cover bg-center" style={{ backgroundImage: `url(${iklan})` }}>
             <button className="absolute left-4 cursor-pointer">
               <ChevronLeft size={32} />
@@ -70,7 +70,7 @@ export default function HomePage() {
 
         {/* kategori */}
         <section className="w-full max-w-6xl mx-auto px-4 mt-8">
-          <div className="grid grid-cols-5 gap-4 justify-items-center">
+          <div className="grid grid-cols-3 lg:grid-cols-5 gap-4 justify-items-center">
             {kategori.map((cat, idx) => (
               <div key={idx} className="flex flex-col items-center">
                 <div className="h-20 rounded-full overflow-hidden shadow-md cursor-pointer flex items-center justify-center bg-[#B4DC62]">
