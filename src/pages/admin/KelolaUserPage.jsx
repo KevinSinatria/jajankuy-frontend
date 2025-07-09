@@ -17,12 +17,7 @@ const KelolaUserPage = () => {
     { id: 8, username: "yassir", email: "yassir@gmail.com", role: "siswa" },
     { id: 9, username: "nazmi", email: "nazmi@gmail.com", role: "siswa" },
     { id: 10, username: "shafa", email: "shafa@gmail.com", role: "siswa" },
-    {
-      id: 11,
-      username: "ghaisani",
-      email: "ghaisani@gmail.com",
-      role: "siswa",
-    },
+    { id: 11, username: "ghaisani", email: "ghaisani@gmail.com", role: "siswa" },
     { id: 12, username: "luthfi", email: "luthfi@gmail.com", role: "siswa" },
     { id: 13, username: "rian", email: "rian@gmail.com", role: "siswa" },
     { id: 14, username: "alif", email: "alif@gmail.com", role: "siswa" },
@@ -38,12 +33,7 @@ const KelolaUserPage = () => {
     { id: 24, username: "yassir", email: "yassir2@gmail.com", role: "siswa" },
     { id: 25, username: "nazmi", email: "nazmi2@gmail.com", role: "siswa" },
     { id: 26, username: "shafa", email: "shafa2@gmail.com", role: "siswa" },
-    {
-      id: 27,
-      username: "ghaisani",
-      email: "ghaisani2@gmail.com",
-      role: "siswa",
-    },
+    { id: 27, username: "ghaisani", email: "ghaisani2@gmail.com", role: "siswa" },
     { id: 28, username: "luthfi", email: "luthfi2@gmail.com", role: "siswa" },
     { id: 29, username: "rian", email: "rian2@gmail.com", role: "siswa" },
     { id: 30, username: "alif", email: "alif2@gmail.com", role: "siswa" },
@@ -62,20 +52,15 @@ const KelolaUserPage = () => {
 
   const handleSubmitUser = (userData) => {
     if (editingUser) {
-      // Edit mode
       setUsers((prevUsers) =>
-        prevUsers.map((u) =>
-          u.id === editingUser.id ? { ...u, ...userData } : u
-        )
+        prevUsers.map((u) => (u.id === editingUser.id ? { ...u, ...userData } : u))
       );
     } else {
-      // Add mode
       const newId = users.length + 1;
       setUsers([...users, { id: newId, ...userData }]);
     }
-
     setShowForm(false);
-    setEditingUser(null); // reset edit mode
+    setEditingUser(null);
   };
 
   const handleEditUser = (user) => {
@@ -95,7 +80,6 @@ const KelolaUserPage = () => {
     setShowForm(false);
   };
 
-  // ini bisa di ganti sama sweatalert 
   const handleDeleteUser = (id) => {
     const confirmed = window.confirm("Yakin ingin menghapus user ini?");
     if (confirmed) {
@@ -104,13 +88,10 @@ const KelolaUserPage = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-white">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-white">
       <Sidebar />
-
-      <div className="flex-1 flex justify-center items-center">
-        <div className="w-300 p-10 flex flex-col justify-center items-center">
-          {/* Konten kamu di sini */}
-
+      <div className="flex-1 flex justify-center items-center p-4 sm:p-10">
+        <div className="w-full max-w-7xl flex flex-col items-center">
           {showForm ? (
             <UserForm
               onSubmit={handleSubmitUser}
@@ -118,29 +99,27 @@ const KelolaUserPage = () => {
                 setShowForm(false);
                 setEditingUser(null);
               }}
-              initialData={editingUser}
-            />
+              initialData={editingUser} />
           ) : (
             <>
-              <div className="text-4xl font-bold text-center mb-9">
+              <div className="text-2xl sm:text-4xl font-bold text-center mb-9">
                 Lihat Siapa Saja User Jajankuy!
               </div>
 
-              <div className="rounded-2xl shadow-2xl mb-5 p-15 border">
-                <div className="flex gap-5 items-center">
-                  <h1 className="text-4xl font-bold">Users</h1>
-                  <img src={user} alt="" />
+              <div className="rounded-2xl shadow-2xl mb-5 p-5 sm:p-10 border w-full">
+                <div className="flex flex-col sm:flex-row sm:gap-5 sm:items-center">
+                  <h1 className="text-2xl sm:text-4xl font-bold">Users</h1>
+                  <img src={user} alt="" className="w-20 h-20" />
                 </div>
 
-                <div className="mt-5 flex justify-center">
-                  <div className="grid grid-cols-5 gap-15">
+                <div className="mt-5 flex justify-center w-full overflow-x-auto">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
                     <AddUser
                       onClick={() => {
-                        setEditingUser(null); // reset mode edit
-                        setShowForm(true); // tampilkan form
+                        setEditingUser(null);
+                        setShowForm(true);
                       }}
                     />
-
                     {currentUsers.map((user) => (
                       <ProfileUserInAdmin
                         key={user.id}
@@ -149,20 +128,17 @@ const KelolaUserPage = () => {
                         email={user.email}
                         role={user.role}
                         onEdit={() => handleEditUser(user)}
-                        onDelete={() => handleDeleteUser(user.id)}
-                      />
+                        onDelete={() => handleDeleteUser(user.id)} />
                     ))}
                   </div>
                 </div>
               </div>
 
-              {/* Pagination */}
-              <div className="flex justify-center gap-2">
+              <div className="flex flex-wrap justify-center gap-2">
                 <button
                   onClick={() => goToPage(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
-                >
+                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50" >
                   Prev
                 </button>
 
@@ -170,12 +146,10 @@ const KelolaUserPage = () => {
                   <button
                     key={i}
                     onClick={() => goToPage(i + 1)}
-                    className={`px-3 py-2 rounded ${
-                      currentPage === i + 1
-                        ? "bg-yellow-500 text-white"
-                        : "bg-gray-100 hover:bg-gray-200"
-                    }`}
-                  >
+                    className={`px-3 py-2 rounded ${currentPage === i + 1
+                      ? "bg-yellow-500 text-white"
+                      : "bg-gray-100 hover:bg-gray-200"
+                      }`} >
                     {i + 1}
                   </button>
                 ))}
@@ -183,8 +157,7 @@ const KelolaUserPage = () => {
                 <button
                   onClick={() => goToPage(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
-                >
+                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50" >
                   Next
                 </button>
               </div>

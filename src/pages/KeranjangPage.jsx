@@ -46,23 +46,23 @@ const KeranjangPage = () => {
                         <h1 className="text-3xl font-semibold text-center mb-8">Keranjang</h1>
 
                         <div className="flex flex-col md:flex-row gap-8">
-                            
+
                             {/* daftar produk */}
                             <div className="flex-1 space-y-4 mb-6">
                                 {keranjang.map((item) => (
                                     <div
                                         key={item.id}
-                                        className="flex items-center bg-white shadow-md rounded-xl p-4 gap-4 border border-gray-200"
-                                    >
-                                        <input
-                                            type="checkbox"
-                                            checked={item.checked}
-                                            onChange={() => toggleCheck(item.id)}
-                                            className="accent-blue-500 w-5 h-5"
-                                        />
-                                        <img src={leMinerale} alt={item.nama} className="w-16 h-16 object-contain" />
+                                        className="flex items-center bg-white shadow-md rounded-xl p-4 gap-4 border border-gray-200" >
+                                        <div className="flex items-center gap-2">
+                                            <input
+                                                type="checkbox"
+                                                checked={item.checked}
+                                                onChange={() => toggleCheck(item.id)}
+                                                className="accent-blue-500 w-5 h-5" />
+                                            <img src={leMinerale} alt={item.nama} className="w-16 h-16 object-contain" />
+                                        </div>
                                         <div className="flex-1">
-                                            <h2 className="text-lg font-semibold">{item.nama}</h2>
+                                            <h2 className="text-md md:text-lg font-semibold">{item.nama}</h2>
                                             <div className="flex items-center gap-2 mt-1">
                                                 <button onClick={() => handleQtyChange(item.id, -1)}>
                                                     <MinusCircle className="text-yellow-500 hover:text-yellow-600 w-5 h-5" />
@@ -74,13 +74,12 @@ const KeranjangPage = () => {
                                             </div>
                                         </div>
                                         <div className="text-right">
-                                            <p className="font-bold text-lg">
+                                            <p className="font-semibold text-md md:text-lg">
                                                 Rp. {(item.harga * item.qty).toLocaleString("id-ID")},00
                                             </p>
                                             <button
                                                 onClick={() => handleDelete(item.id)}
-                                                className="mt-2 bg-yellow-400 text-black px-4 py-1 rounded-md hover:bg-yellow-500"
-                                            >
+                                                className="mt-2 bg-yellow-400 text-black px-4 py-1 rounded-md hover:bg-yellow-500" >
                                                 Hapus
                                             </button>
                                         </div>

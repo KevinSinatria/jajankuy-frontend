@@ -1,10 +1,6 @@
 import React from 'react';
 import Sidebar from '../../components/Sidebar';
 import {
-  FileText,
-  XCircle,
-  ShoppingBag,
-  PieChart,
   ArrowUpRight,
 } from 'lucide-react';
 import bg from '../../assets/PotoProfile.jpg';
@@ -37,21 +33,18 @@ const renderLabel = ({ name, percent, value }) => {
 
 const DashboardAdminPage = () => {
   return (
-    <div className="flex min-h-screen bg-white">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-white">
       <Sidebar />
-      <div className="flex-1 p-6 space-y-6">
+      <div className="flex-1 p-4 sm:p-6 space-y-6">
         {/* profile */}
-        <div className="bg-white rounded-2xl overflow-hidden shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+        <div className="bg-white rounded-2xl overflow-hidden shadow-md">
           <div
-            className="h-24 bg-cover bg-center rounded-t-2xl rounded-b-2xl"
+            className="h-24 bg-cover bg-center"
             style={{ backgroundImage: `url(${banner})` }}>
           </div>
-          <div className="flex items-center justify-between px-8 -mt-12 pb-4">
-            <div className="w-38 h-38 rounded-full border-4 border-white overflow-hidden">
-              <img
-                src={bg}
-                alt="profile"
-                className="w-full h-full object-cover"/>
+          <div className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 -mt-12 pb-4">
+            <div className="w-24 h-24 rounded-full border-4 border-white overflow-hidden">
+              <img src={bg} alt="profile" className="w-full h-full object-cover" />
             </div>
             <div className="flex-1 ml-4 flex flex-col justify-center mt-15">
               <div className="flex justify-between items-start">
@@ -75,7 +68,7 @@ const DashboardAdminPage = () => {
 
         {/* statistik pemasukan & pengeluaran */}
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-          <div className="bg-white rounded-2xl shadow-[0_0_10px_rgba(0,0,0,0.5)] p-4">
+          <div className="bg-white rounded-2xl shadow-md p-4">
             <h3 className="text-lg font-semibold mb-4 flex justify-between">Pemasukan dan Pengeluaran <a href="statistik"><ArrowUpRight className='cursor-pointer' /></a></h3>
             <ResponsiveContainer width="100%" height={200}>
               <LineChart data={dataPenjualan}>
@@ -87,17 +80,16 @@ const DashboardAdminPage = () => {
             </ResponsiveContainer>
           </div>
 
-          {/* statistik jumlah penlanggan & pesanan */}
           <div className="space-y-4">
-            <div className="bg-[#DEEDC05C] rounded-3xl p-4 flex items-center gap-4 h-[154px] shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-              <img src={imgOrder} alt="" />
+            <div className="bg-[#DEEDC05C] rounded-3xl p-4 flex items-center gap-4 h-[154px] shadow-md">
+              <img src={imgOrder} alt="" className="w-12 h-12" />
               <div>
                 <p className="text-sm">Jumlah Pesanan</p>
                 <p className="font-bold text-lg">48 pesanan</p>
               </div>
             </div>
-            <div className="bg-[#DEEDC05C] rounded-3xl p-4 flex items-center gap-4 h-[154px] shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-              <img src={imgOrder2} alt="" />
+            <div className="bg-[#DEEDC05C] rounded-3xl p-4 flex items-center gap-4 h-[154px] shadow-md">
+              <img src={imgOrder2} alt="" className="w-12 h-12" />
               <div>
                 <p className="text-sm">Jumlah Pelanggan</p>
                 <p className="font-bold text-lg">30 pelanggan</p>
@@ -105,22 +97,21 @@ const DashboardAdminPage = () => {
             </div>
           </div>
 
-          {/* iklan */}
-          <div className="bg-white rounded-3xl shadow-[0_0_10px_rgba(0,0,0,0.5)] p-4">
+          <div className="bg-white rounded-3xl shadow-md p-4">
             <div className="mb-4">
               <img src={imgIklan} alt="iklan" className="rounded-lg w-full h-24 object-cover" />
-              <a href="kelola-iklan"><button className="mt-2 w-full bg-[#000000] cursor-pointer text-white py-1 rounded-lg">Edit Iklan</button></a>
+              <a href="kelola-iklan"><button className="mt-2 w-full bg-black text-white py-1 rounded-lg">Edit Iklan</button></a>
             </div>
             <div>
               <img src={imgIklan} alt="jajanan" className="rounded-lg w-full h-24 object-cover" />
-              <a href="kelola-iklan"><button className="mt-2 w-full bg-[#000000] cursor-pointer text-white py-1 rounded-lg">Edit Iklan</button></a>
+              <a href="kelola-iklan"><button className="mt-2 w-full bg-black text-white py-1 rounded-lg">Edit Iklan</button></a>
             </div>
           </div>
         </div>
 
         {/* pesanan & pie chart */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-          <div className="bg-[#708A58] rounded-3xl shadow p-4 text-white">
+          <div className="bg-[#708A58] rounded-3xl shadow-md p-4 text-white overflow-x-auto">
             <h3 className="text-lg font-bold mb-4">Pesanan</h3>
             <table className="w-full text-left text-sm">
               <thead>
@@ -132,20 +123,20 @@ const DashboardAdminPage = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr className="bg-[#647A50] rounded-lg">
-                  <td className="py-4 px-2"><input type="checkbox" name="" id="" /> #1123</td>
+                <tr className="bg-[#647A50]">
+                  <td className="py-4 px-2"><input type="checkbox" /> #1123</td>
                   <td>Wonyoung</td>
                   <td>Jan 27, 2025</td>
                   <td className="text-green-300 font-semibold">Dikirimkan</td>
                 </tr>
-                <tr className="bg-[#647A50] mt-2 rounded-lg">
-                  <td className="py-4 px-2"><input type="checkbox" name="" id="" /> #1123</td>
+                <tr className="bg-[#647A50]">
+                  <td className="py-4 px-2"><input type="checkbox" /> #1124</td>
                   <td>Emily</td>
                   <td>Jan 28, 2025</td>
                   <td className="text-red-300 font-semibold">Dibatalkan</td>
                 </tr>
-                <tr className="bg-[#647A50] mt-2 rounded-lg">
-                  <td className="py-4 px-2"><input type="checkbox" name="" id="" /> #1123</td>
+                <tr className="bg-[#647A50]">
+                  <td className="py-4 px-2"><input type="checkbox" /> #1125</td>
                   <td>Emily</td>
                   <td>Feb 13, 2025</td>
                   <td className="text-white font-semibold">Selesai</td>
@@ -157,7 +148,7 @@ const DashboardAdminPage = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-[0_0_10px_rgba(0,0,0,0.5)] p-4 h-76">
+          <div className="bg-white rounded-3xl shadow-md p-4">
             <h3 className="text-lg font-bold flex justify-between">Penjualan <a href="statistik"><ArrowUpRight className='cursor-pointer' /></a></h3>
             <ResponsiveContainer width="100%" height={230}>
               <RPieChart>

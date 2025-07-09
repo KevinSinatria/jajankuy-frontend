@@ -25,7 +25,7 @@ function ProfileUserInAdmin({ username, email, role, id, onEdit, onDelete }) {
       className="relative group max-w-45 h-60 cursor-pointer"
     >
       {/* Status Bulat */}
-      <div className="absolute w-7 h-7 rounded-full border-8 border-gray-900 bg-gray-400 right-0 m-5 bottom-17"></div>
+      <div className="absolute w-7 h-7 rounded-full border-8 border-gray-900 bg-gray-400 right-0 lg:m-5 mb-14 mr-2 lg:mr-4 bottom-17"></div>
 
       {/* Foto */}
       <img src={pp} alt="" className="w-45" />
