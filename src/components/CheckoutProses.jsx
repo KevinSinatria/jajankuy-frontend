@@ -5,7 +5,7 @@ import order from "../assets/orderLogo.png";
 
 function CheckoutProses() {
   return (
-    <div className="px-4 py-10">
+    <div className="px-4 ">
       <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-10 flex-nowrap">
         
         {/* Step 1 */}
