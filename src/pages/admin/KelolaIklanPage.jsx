@@ -29,30 +29,41 @@ const KelolaIklanPage = () => {
 
       {/* section iklan */}
       {!showFormTambah && !showFormEdit && (
-        <div className="flex-1 p-10">
-          <h2 className="text-xl font-bold text-center mb-9">Tambah Iklan Baru</h2>
-          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-3xl p-6 mb-10 flex items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="w-36 h-30 bg-gray-100 border border-dashed rounded-lg flex items-center justify-center">
-                <Camera className="text-gray-400 text-2xl" />
+        <div className="flex-1 px-4 sm:px-6 md:px-10 py-6">
+          <h2 className="text-lg sm:text-xl font-bold text-center mb-6 sm:mb-9">Tambah Iklan Baru</h2>
+
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-3xl p-4 sm:p-6 mb-8 sm:mb-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4 w-full sm:w-auto">
+              <div className="w-32 h-28 sm:w-36 sm:h-30 bg-gray-100 border border-dashed rounded-lg flex items-center justify-center">
+                <Camera className="text-gray-400 text-2xl sm:text-3xl" />
               </div>
               <div>
-                <p className="font-semibold text-[30px]">Iklan Baru</p>
+                <p className="font-semibold text-2xl sm:text-[30px]">Iklan Baru</p>
               </div>
             </div>
             <button onClick={() => setShowFormTambah(true)}>
-              <CirclePlus className='h-10 w-10 cursor-pointer' />
+              <CirclePlus className="h-8 w-8 sm:h-10 sm:w-10 cursor-pointer" />
             </button>
           </div>
 
-          <h2 className="text-xl font-bold text-center mb-6">Kelola Iklan</h2>
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <h2 className="text-lg sm:text-xl font-bold text-center mb-4 sm:mb-6">Kelola Iklan</h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6">
             {currentAds.map((item, index) => (
-              <div key={index} className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-2xl p-4">
-                <img src={item.img} alt={item.title} className="w-full h-40 object-cover rounded-xl mb-2" />
-                <div className="flex justify-between items-center">
-                  <p className="font-semibold text-lg">{item.title}</p>
-                  <button onClick={() => setShowFormEdit(true)} className="bg-gray-900 text-white px-4 py-1 rounded-full text-sm shadow">Edit</button>
+              <div
+                key={index}
+                className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-2xl p-4" >
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-40 object-cover rounded-xl mb-3" />
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
+                  <p className="font-semibold text-base sm:text-lg">{item.title}</p>
+                  <button
+                    onClick={() => setShowFormEdit(true)}
+                    className="bg-gray-900 text-white px-4 py-1 rounded-full text-sm shadow" >
+                    Edit
+                  </button>
                 </div>
               </div>
             ))}
@@ -68,10 +79,11 @@ const KelolaIklanPage = () => {
         </div>
       )}
 
+
       {/* form tambah iklan */}
       {showFormTambah && (
         <div className="flex-1 p-10">
-          <div className='flex items-center mb-6'>
+          <div className='flex items-center mb-6 mt-5 lg:mt-0'>
             <button onClick={() => setShowFormTambah(false)} className='cursor-pointer'>
               <ArrowLeft className='w-10 h-10' />
             </button>
@@ -101,7 +113,7 @@ const KelolaIklanPage = () => {
               <input
                 type="text"
                 className="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black"
-                placeholder="Masukkan nama iklan"/>
+                placeholder="Masukkan nama iklan" />
             </div>
 
             <button
@@ -116,7 +128,7 @@ const KelolaIklanPage = () => {
       {/* form edit iklan */}
       {showFormEdit && (
         <div className="flex-1 p-10">
-          <div className='flex items-center mb-6'>
+          <div className='flex items-center mb-6 mt-5 lg:mt-0'>
             <button onClick={() => setShowFormEdit(false)} className='cursor-pointer'>
               <ArrowLeft className='w-10 h-10' />
             </button>

@@ -63,8 +63,8 @@ function HistoryPage() {
       ],
     },
     {
-      tanggal : "24/04/2008",
-      produk:[
+      tanggal: "24/04/2008",
+      produk: [
         {
           namaProduk: "yuhu",
           deks: "ahahahaha",
@@ -79,7 +79,7 @@ function HistoryPage() {
     <div className="w-full min-h-screen flex flex-col" style={{ backgroundImage: 'linear-gradient(to top, #83A24A, #AEC77D, #D7EAAE)', }}>
       <Navbar />
 
-      <div className="mt-30 px-4 sm:px-6 lg:px-10">
+      <div className="mt-20 md:mt-30 px-4 sm:px-6 lg:px-10 py-5">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <div className="flex items-center">
@@ -108,7 +108,7 @@ function HistoryPage() {
           return isSatuan ? (
             // Card Satuan
             <div key={index} className="flex justify-center items-center py-2">
-              <div className="w-full max-w-7xl bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-transform hover:scale-[1.01] duration-300 ease-in-out">
+              <div className="w-full max-w-7xl bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-in-out">
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-6 p-6">
                   {/* Gambar Produk */}
                   <img
@@ -161,7 +161,7 @@ function HistoryPage() {
           ) : (
             // Card Banyak Produk
             <div key={index} className="flex justify-center items-center py-5">
-              <div className="w-full max-w-7xl bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-transform hover:scale-[1.01] duration-300 ease-in-out p-5">
+              <div className="w-full max-w-7xl bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-in-out p-5">
                 <div className="flex md:flex-col flex-col-reverse">
                   <h1 className="text-xl md:text-2xl font-semibold flex justify-end px-5">
                     Rp. {totalHarga.toLocaleString("id-ID")}

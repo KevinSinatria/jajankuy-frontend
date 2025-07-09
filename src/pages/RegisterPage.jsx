@@ -1,6 +1,7 @@
 import RegisterForm from "../components/RegisterForm";
 import Logo from "../assets/logoBaru.png";
 import Navbar from "../components/Navbar";
+import bg from "../assets/registerbg.png";
 
 export default function RegisterPage() {
   return (
@@ -26,22 +27,24 @@ export default function RegisterPage() {
     // </div>
     <div className="relative">
       {/* Konten utama paling bawah */}
-      <div className="bg-[#B4DC62] h-screen absolute  inset-0 z-[-20]"></div>
+      <div className="h-screen inset-0 z-[-20] flex md:justify-start items-center" style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
 
-      {/* Background Shapes di atas layer hijau */}
-      <div className="absolute inset-0 -z-10">
-        <img src={Logo} alt="Logo" className="absolute right-0 top-0 w-250 mt-50 md:mt-5" />
-      </div>
-
-      {/* Konten lain di atas semuanya */}
-      <div className="relative z-10">
-        <Navbar />
-        <div className="w-full flex justify-center md:justify-start md:mt-0 py-40 px-4 md:px-20">
-          <div className="w-full max-w-lg">
-            <RegisterForm />
+        {/* Konten lain di atas semuanya */}
+        <div className="relative z-10 bg-[#B4DC62] lg:bg-transparent">
+          <Navbar />
+          <div className="w-full flex justify-center md:justify-start md:mt-0 px-4 mt-30 md:px-20 md:w-300">
+            <div className="w-full max-w-lg">
+              <RegisterForm />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Background Shapes di atas layer hijau
+      <div className="absolute inset-0 -z-10">
+        <img src={Logo} alt="Logo" className="absolute right-0 top-0 w-250 mt-50 md:mt-5" />
+      </div> */}
+
     </div>
   );
 }

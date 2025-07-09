@@ -45,9 +45,11 @@ const FavoritePage = () => {
                             <div className="flex gap-4">
                                 {/* Kiri: Produk */}
                                 <div className="flex flex-1 items-center bg-white shadow-md rounded-xl p-4 border border-gray-200 gap-4">
-                                    <img src={leMinerale} alt={item.nama} className="w-14 h-14 object-contain" />
-                                    <div>
-                                        <h2 className="text-lg font-semibold">{item.nama}</h2>
+                                    <div className='flex-1'>
+                                        <div className="flex justify-center py-2">
+                                            <img src={leMinerale} alt={item.nama} className="w-14 h-14 object-contain" />
+                                        </div>
+                                        <h2 className="text-md md:text-lg font-semibold">{item.nama}</h2>
                                         <div className="flex items-center gap-2 mt-1">
                                             <button onClick={() => handleQtyChange(item.id, -1)}>
                                                 <MinusCircle className="text-yellow-500 hover:text-yellow-600 w-5 h-5" />
