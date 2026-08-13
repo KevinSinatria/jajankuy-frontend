@@ -7,6 +7,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter basename="/">
       <App />
+      {/*  Testing */}
     </BrowserRouter>
   </StrictMode>
 );
